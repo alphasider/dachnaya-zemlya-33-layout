@@ -1,6 +1,105 @@
-$primary-colour: #444;
+// Конфигурации
 
-body {
-    background: $primary-colour;
-    color: red
+$primary-color: #fe7f18;
+$light-gray-bg: #f3f4f6;
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// Остовные стили
+html {
+    font-size: 14px
+}
+
+header {
+    border: 1px solid red;
+}
+
+.header-content {
+    align-items: center
+}
+
+.logo {
+    width: 300px;
+}
+
+.text-info {
+    text-align: center
+}
+
+.contact-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.callback-btn {
+    color: $primary-color;
+}
+
+.contact-btn {
+    border-radius: 50%;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px 0px rgb(206, 206, 206);
+    width: 67px;
+    height: 68px;
+
+}
+
+.phone-number {
+    font-size: 1.4rem;
+}
+
+.header-nav {
+    background: $light-gray-bg;
+
+    .header-nav-menu {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        .nav-menu-item {
+            position: relative;
+
+            &:hover .nested-nav-menu {
+                display: flex;
+            }
+
+            &_active {
+                border-bottom: 4px solid $primary-color
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                height: 60px;
+                color: #000;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            .nested-nav-menu {
+                position: absolute;
+                display: none;
+                list-style: none;
+                height: 280px;
+                flex-direction: column;
+            }
+        }
+
+
+
+
+    }
 }
