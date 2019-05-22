@@ -1,3 +1,6 @@
+:root {
+  font-size: 16px; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -6,62 +9,143 @@ a {
   text-decoration: none;
   cursor: pointer; }
 
-html {
-  font-size: 14px; }
+.primary {
+  color: #fe7f18; }
 
-header {
-  border: 1px solid red; }
+.link--small {
+  font-size: .875rem; }
+
+.link--underlined {
+  text-decoration: underline solid #fe7f18; }
 
 .header-content {
   align-items: center; }
-
-.logo {
-  width: 300px; }
-
-.text-info {
-  text-align: center; }
-
-.contact-block {
-  display: flex;
-  justify-content: space-between; }
-
-.callback-btn {
-  color: #fe7f18; }
-
-.contact-btn {
-  border-radius: 50%;
-  background-color: #FFF;
-  box-shadow: 0px 0px 25px 0px #cecece;
-  width: 67px;
-  height: 68px; }
-
-.phone-number {
-  font-size: 1.4rem; }
-
-.header-nav {
-  background: #f3f4f6; }
-  .header-nav .header-nav-menu {
-    list-style: none;
+  .header-content .logo {
+    width: 300px; }
+  .header-content .text-info {
+    text-align: center; }
+  .header-content .contact-block {
     display: flex;
     justify-content: space-between; }
-    .header-nav .header-nav-menu .nav-menu-item {
+  .header-content .callback-btn {
+    color: #fe7f18; }
+  .header-content .contact-btn {
+    border-radius: 50%;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px 0px #cecece;
+    width: 67px;
+    height: 68px; }
+  .header-content .phone-number {
+    font-size: 1.4rem; }
+  .header-content .header-nav {
+    background: #f3f4f6; }
+    .header-content .header-nav .header-nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: space-between; }
+      .header-content .header-nav .header-nav-menu .nav-menu-item {
+        position: relative; }
+        .header-content .header-nav .header-nav-menu .nav-menu-item:hover .nested-nav-menu {
+          display: flex; }
+        .header-content .header-nav .header-nav-menu .nav-menu-item_active {
+          border-bottom: 4px solid #fe7f18; }
+        .header-content .header-nav .header-nav-menu .nav-menu-item a {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          height: 60px;
+          color: #000; }
+          .header-content .header-nav .header-nav-menu .nav-menu-item a:hover {
+            color: #fe7f18; }
+        .header-content .header-nav .header-nav-menu .nav-menu-item .nested-nav-menu {
+          position: absolute;
+          display: none;
+          list-style: none;
+          height: 280px;
+          flex-direction: column; }
+
+#our-villages > .container > header {
+  border: 1px solid teal; }
+  #our-villages > .container > header h1 {
+    display: inline;
+    position: relative;
+    background: green; }
+    #our-villages > .container > header h1:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: .8rem;
+      border-bottom: .16rem solid red; }
+
+#our-villages .articles-grid {
+  max-width: 100%;
+  display: grid;
+  grid-gap: 1.6em;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; }
+  #our-villages .articles-grid .grid-item {
+    max-width: 360px;
+    width: 22em;
+    border: 0.16em solid #f3f4f6; }
+    #our-villages .articles-grid .grid-item .grid-image {
+      height: 170px;
+      overflow: hidden; }
+    #our-villages .articles-grid .grid-item article > * {
+      padding: .6em 1.2em; }
+    #our-villages .articles-grid .grid-item article h2 {
+      font-size: 1.2rem;
       position: relative; }
-      .header-nav .header-nav-menu .nav-menu-item:hover .nested-nav-menu {
-        display: flex; }
-      .header-nav .header-nav-menu .nav-menu-item_active {
-        border-bottom: 4px solid #fe7f18; }
-      .header-nav .header-nav-menu .nav-menu-item a {
-        display: flex;
-        align-items: center;
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        height: 60px;
-        color: #000; }
-        .header-nav .header-nav-menu .nav-menu-item a:hover {
-          color: #fe7f18; }
-      .header-nav .header-nav-menu .nav-menu-item .nested-nav-menu {
+      #our-villages .articles-grid .grid-item article h2::before {
+        content: '';
         position: absolute;
-        display: none;
-        list-style: none;
-        height: 280px;
-        flex-direction: column; }
+        bottom: -.6em;
+        left: 0;
+        width: 50%;
+        border-bottom: 3px solid #fe7f18; }
+    #our-villages .articles-grid .grid-item article .area-info--details {
+      display: flex;
+      justify-content: space-between;
+      font-size: .875rem;
+      border-top: 0.16em solid #f3f4f6; }
+      #our-villages .articles-grid .grid-item article .area-info--details .value {
+        color: #37550f; }
+    #our-villages .articles-grid .grid-item article .area-info--features--list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: row; }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .area-info--features--list-item {
+        background-color: #37550f;
+        width: 2.5em;
+        height: 2.5em;
+        margin-left: .71em;
+        margin-right: .71em;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50% !important;
+        cursor: pointer; }
+        #our-villages .articles-grid .grid-item article .area-info--features--list .area-info--features--list-item:hover {
+          background-color: #fe7f18; }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .area-info--features--list-item:first-child {
+        margin-left: 0; }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .area-info--features--list-item:last-child {
+        margin-right: 0; }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .electrocity {
+        background-image: url(../imgs/power-cord.svg); }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .gas {
+        background-image: url(../imgs/gas.svg); }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .water {
+        background-image: url(../imgs/washing-hand.svg); }
+      #our-villages .articles-grid .grid-item article .area-info--features--list .car {
+        background-image: url(../imgs/car.svg); }
+    #our-villages .articles-grid .grid-item article .area-info--footer {
+      background-color: #f3f4f6; }
+      #our-villages .articles-grid .grid-item article .area-info--footer .area-info--price {
+        font-size: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
