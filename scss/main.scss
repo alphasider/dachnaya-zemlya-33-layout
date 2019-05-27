@@ -1,8 +1,18 @@
 // Конфигурации
 
-$primary-color: #fe7f18;
-$secondary-color: #37550f;
-$light-gray: #f3f4f6;
+// Переменные
+$accent-orange: #fe7f18;
+$accent-green: #37550f;
+$primary-color: #f3f4f6;
+$secondary-color: #aaa;
+
+$shadow: 0px 0px 20px 0px rgb(206, 206, 206);
+
+$font-14px: .875rem;
+$font-18px: 1.125rem;
+$font-20px: 1.25rem;
+
+$round: 50px;
 
 :root {
     font-size: 16px
@@ -13,28 +23,62 @@ $light-gray: #f3f4f6;
     padding: 0
 }
 
-a {
+.link {
     text-decoration: none;
     cursor: pointer;
+    color: #000;
+
+    &_primary {
+        font-size: $font-14px;
+        color: $accent-orange;
+        text-decoration: underline solid $accent-orange
+    }
+
+    &_secondary {
+        color: $secondary-color;
+        text-decoration: underline solid $secondary-color
+    }
+
+    &_no-undeline {
+        text-decoration: none;
+    }
+
 }
 
-.primary {
-    color: $primary-color;
+
+::placeholder {
+    color: $secondary-color;
 }
 
-.link--small {
-    font-size: .875rem;
+.section-header__h1 {
+    font-size: 2.18rem;
+    text-align: center;
 }
 
-.link--underlined {
-    text-decoration: underline solid $primary-color
+.underlined-heading {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -.6em;
+        left: 0;
+        width: 50%;
+        border-bottom: .125em solid $accent-orange;
+    }
+
+    &_short::after {
+        width: 30%;
+        border-bottom-width: .1em
+    }
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
 }
 
 
 // Остовные стили
-html {
-    // font-size: 14px
-}
+
 
 // header {
 //     border: 1px solid red;
@@ -58,12 +102,13 @@ html {
 
 
     .callback-btn {
-        color: $primary-color;
+        color: $accent-orange;
     }
 
     .contact-btn {
         border-radius: 50%;
-        background-color: #FFF;
+        background: #FFF url(../imgs/phone.svg) no-repeat center;
+        background-size: 35%;
         box-shadow: 0px 0px 25px 0px rgb(206, 206, 206);
         width: 67px;
         height: 68px;
@@ -76,10 +121,10 @@ html {
 
     // Навигационное меню в шапке
     .header-nav {
-        background: $light-gray;
+        background: $primary-color;
 
         .header-nav-menu {
-            list-style: none;
+
             display: flex;
             justify-content: space-between;
 
@@ -91,7 +136,7 @@ html {
                 }
 
                 &_active {
-                    border-bottom: 4px solid $primary-color
+                    border-bottom: 4px solid $accent-orange
                 }
 
                 a {
@@ -103,14 +148,14 @@ html {
                     color: #000;
 
                     &:hover {
-                        color: $primary-color;
+                        color: $accent-orange;
                     }
                 }
 
                 .nested-nav-menu {
                     position: absolute;
                     display: none;
-                    list-style: none;
+
                     height: 280px;
                     flex-direction: column;
                 }
@@ -119,34 +164,62 @@ html {
     }
 }
 
+.section {
+    padding-top: 3.125em;
+    padding-bottom: 3.125em;
 
+    .section__header {
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .section__h1 {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 35%;
+            // height: .8rem;
+            border-bottom: .16rem solid $primary-color;
+            // transform: translateY(-50%)
+        }
+
+        &::before {
+            left: 0
+        }
+
+        &::after {
+            right: 0
+        }
+    }
+
+    .section__h3 {
+        font-size: $font-20px;
+        font-weight: lighter;
+    }
+
+    .section__view-all-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5em auto;
+        width: 18.75em;
+        height: 3.125em;
+        color: #fff;
+        font-size: $font-18px;
+        background-color: $accent-orange;
+        border-radius: $round;
+
+    }
+}
 
 // Секция "Наши Деревни"
 
 #our-villages {
-
-    &>.container>header {
-        border: 1px solid teal;
-        // text-align: center;
-
-        h1 {
-            display: inline;
-            position: relative;
-            background: green;
-
-            &:before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0;
-                width: 100%;
-                height: .8rem;
-                border-bottom: .16rem solid red
-            }
-        }
-
-    }
-
     .articles-grid {
         max-width: 100%;
         display: grid;
@@ -157,7 +230,12 @@ html {
         .grid-item {
             max-width: 360px;
             width: 22em;
-            border: .16em solid $light-gray;
+            border: .16em solid $primary-color;
+
+            &:hover {
+                box-shadow: $shadow;
+
+            }
 
             .grid-image {
                 height: 170px;
@@ -177,15 +255,6 @@ html {
                     position: relative;
                     // padding-top: 1em;
                     // padding-bottom: 1em;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        bottom: -.6em;
-                        left: 0;
-                        width: 50%;
-                        border-bottom: 3px solid $primary-color;
-                    }
                 }
 
                 // Описание в "плитке"
@@ -198,26 +267,26 @@ html {
                 .area-info--details {
                     display: flex;
                     justify-content: space-between;
-                    font-size: .875rem;
-                    border-top: .16em solid $light-gray;
+                    font-size: $font-14px;
+                    border-top: .16em solid $primary-color;
 
                     // Значение характеристик
                     .value {
-                        color: $secondary-color;
+                        color: $accent-green;
                     }
                 }
 
                 // Иконки (Электричество, газ, вода)
                 .area-info--features--list {
-                    list-style: none;
+
                     // margin-top: 1em;
                     // margin-bottom: 1em;
-                    padding-left: 0;
+
                     display: flex;
                     flex-direction: row;
 
                     .area-info--features--list-item {
-                        background-color: $secondary-color;
+                        background-color: $accent-green;
                         width: 2.5em;
                         height: 2.5em;
                         margin-left: .71em;
@@ -229,7 +298,7 @@ html {
                         cursor: pointer;
 
                         &:hover {
-                            background-color: $primary-color;
+                            background-color: $accent-orange;
                         }
                     }
 
@@ -260,10 +329,10 @@ html {
 
                 // Подвал "плитки"
                 .area-info--footer {
-                    background-color: $light-gray;
+                    background-color: $primary-color;
 
                     .area-info--price {
-                        font-size: 1.25rem;
+                        font-size: $font-20px;
                         display: flex;
                         justify-content: space-between;
                         align-items: center
@@ -272,4 +341,141 @@ html {
             }
         }
     }
+}
+
+// Форма обратнтой связи
+#contact-form {
+    background-color: $primary-color;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 12.5em;
+        grid-gap: .625em;
+
+        .contact-form__element {
+            // width: 18.75em;
+            max-width: 300px;
+            height: 3.125em;
+            font-size: $font-18px;
+            padding-left: 1.875em;
+            padding-right: 1.875em;
+            background-color: #fff;
+            border-radius: $round;
+            border: transparent
+        }
+
+        .contact-form__submit-btn {
+
+            max-width: 12.5em;
+            font-size: $font-18px;
+            color: #fff;
+            background-color: $accent-orange;
+        }
+    }
+
+    .accept-rules {
+        max-width: 23em;
+        padding-top: .625em;
+        text-align: right;
+        font-size: .75rem;
+        color: $secondary-color;
+
+        .link__underlined_secondary {
+            color: $secondary-color;
+            text-decoration: underline solid $secondary-color
+        }
+    }
+}
+
+// Футер
+.footer__main-section {
+    background-color: #3d4144;
+
+    .footer__grid {
+        display: grid;
+        grid-template-columns: 4fr 2fr 2fr;
+
+        .logo-dark {
+            width: 21em
+        }
+
+        .footer__h1 {
+            position: relative;
+            margin-bottom: 1.5625em;
+            font-size: 1.5625rem;
+            color: #fff;
+        }
+
+        .footer-nav__menu-item {
+            padding-top: .3em
+        }
+
+        .footer-nav__menu-item a,
+        .contacts-list__item,
+        .contacts-list__item a {
+            color: $primary-color;
+            // text-decoration: none
+        }
+
+        .column-contacts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contacts-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1
+        }
+
+        .contacts-list__item {
+            padding-left: 2.8em;
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-size: 1em;
+
+        }
+
+        .contacts-list__address {
+            background-image: url(../imgs/map-ballon.svg);
+        }
+
+        .contacts-list__tel {
+            background-image: url(../imgs/phone.svg);
+        }
+
+        .contacts-list__email {
+            background-image: url(../imgs/envelope.svg);
+        }
+    }
+
+
+}
+
+.footer__additional-info {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    color: $secondary-color;
+    font-size: $font-14px;
+    background-color: #282c2f;
+
+
+    .container {
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+
+        .legal-address .link {
+            display: block;
+            text-align: right;
+        }
+    }
+
 }
