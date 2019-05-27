@@ -43,16 +43,23 @@
   padding-left: 0; }
 
 .header-content {
+  padding-top: 1.875em;
+  padding-bottom: 1.875em;
   align-items: center; }
   .header-content .logo {
     width: 300px; }
+  .header-content .header-content__row {
+    align-items: center; }
   .header-content .text-info {
-    text-align: center; }
+    text-align: center;
+    color: #666; }
   .header-content .contact-block {
     display: flex;
     justify-content: space-between; }
+  .header-content .working-hours {
+    color: #aaa; }
   .header-content .callback-btn {
-    color: #fe7f18; }
+    font-size: 1.125rem; }
   .header-content .contact-btn {
     border-radius: 50%;
     background: #FFF url(../imgs/phone.svg) no-repeat center;
@@ -61,32 +68,34 @@
     width: 67px;
     height: 68px; }
   .header-content .phone-number {
-    font-size: 1.4rem; }
-  .header-content .header-nav {
-    background: #f3f4f6; }
-    .header-content .header-nav .header-nav-menu {
-      display: flex;
-      justify-content: space-between; }
-      .header-content .header-nav .header-nav-menu .nav-menu-item {
-        position: relative; }
-        .header-content .header-nav .header-nav-menu .nav-menu-item:hover .nested-nav-menu {
-          display: flex; }
-        .header-content .header-nav .header-nav-menu .nav-menu-item_active {
-          border-bottom: 4px solid #fe7f18; }
-        .header-content .header-nav .header-nav-menu .nav-menu-item a {
-          display: flex;
-          align-items: center;
-          text-transform: uppercase;
-          font-size: 1.2rem;
-          height: 60px;
-          color: #000; }
-          .header-content .header-nav .header-nav-menu .nav-menu-item a:hover {
-            color: #fe7f18; }
-        .header-content .header-nav .header-nav-menu .nav-menu-item .nested-nav-menu {
-          position: absolute;
-          display: none;
-          height: 280px;
-          flex-direction: column; }
+    font-size: 1.7rem;
+    color: #000; }
+
+.header-nav {
+  background: #f3f4f6; }
+  .header-nav .header-nav-menu {
+    display: flex;
+    justify-content: space-between; }
+    .header-nav .header-nav-menu .nav-menu-item {
+      position: relative; }
+      .header-nav .header-nav-menu .nav-menu-item:hover .nested-nav-menu {
+        display: flex; }
+      .header-nav .header-nav-menu .nav-menu-item_active {
+        border-bottom: 4px solid #fe7f18; }
+      .header-nav .header-nav-menu .nav-menu-item a {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        height: 60px;
+        color: #000; }
+        .header-nav .header-nav-menu .nav-menu-item a:hover {
+          color: #fe7f18; }
+      .header-nav .header-nav-menu .nav-menu-item .nested-nav-menu {
+        position: absolute;
+        display: none;
+        height: 280px;
+        flex-direction: column; }
 
 .section {
   padding-top: 3.125em;

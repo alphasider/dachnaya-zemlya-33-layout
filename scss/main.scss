@@ -23,6 +23,7 @@ $round: 50px;
     padding: 0
 }
 
+// Ссылки
 .link {
     text-decoration: none;
     cursor: pointer;
@@ -71,6 +72,7 @@ $round: 50px;
     }
 }
 
+// Списки (меню)
 .list {
     list-style: none;
     padding-left: 0;
@@ -79,20 +81,22 @@ $round: 50px;
 
 // Остовные стили
 
-
-// header {
-//     border: 1px solid red;
-// }
-
 .header-content {
+    padding-top: 1.875em;
+    padding-bottom: 1.875em;
     align-items: center;
 
     .logo {
         width: 300px;
     }
 
+    .header-content__row {
+        align-items: center;
+    }
+
     .text-info {
-        text-align: center
+        text-align: center;
+        color: #666
     }
 
     .contact-block {
@@ -100,9 +104,12 @@ $round: 50px;
         justify-content: space-between;
     }
 
+    .working-hours {
+        color: $secondary-color
+    }
 
     .callback-btn {
-        color: $accent-orange;
+        font-size: $font-18px;
     }
 
     .contact-btn {
@@ -116,49 +123,51 @@ $round: 50px;
     }
 
     .phone-number {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
+        color: #000
     }
 
-    // Навигационное меню в шапке
-    .header-nav {
-        background: $primary-color;
+}
 
-        .header-nav-menu {
+// Навигационное меню в шапке
+.header-nav {
+    background: $primary-color;
 
-            display: flex;
-            justify-content: space-between;
+    .header-nav-menu {
 
-            .nav-menu-item {
-                position: relative;
+        display: flex;
+        justify-content: space-between;
 
-                &:hover .nested-nav-menu {
-                    display: flex;
+        .nav-menu-item {
+            position: relative;
+
+            &:hover .nested-nav-menu {
+                display: flex;
+            }
+
+            &_active {
+                border-bottom: 4px solid $accent-orange
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                height: 60px;
+                color: #000;
+
+                &:hover {
+                    color: $accent-orange;
                 }
+            }
 
-                &_active {
-                    border-bottom: 4px solid $accent-orange
-                }
+            .nested-nav-menu {
+                position: absolute;
+                display: none;
 
-                a {
-                    display: flex;
-                    align-items: center;
-                    text-transform: uppercase;
-                    font-size: 1.2rem;
-                    height: 60px;
-                    color: #000;
-
-                    &:hover {
-                        color: $accent-orange;
-                    }
-                }
-
-                .nested-nav-menu {
-                    position: absolute;
-                    display: none;
-
-                    height: 280px;
-                    flex-direction: column;
-                }
+                height: 280px;
+                flex-direction: column;
             }
         }
     }
