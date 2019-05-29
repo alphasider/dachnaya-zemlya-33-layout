@@ -29,6 +29,7 @@ $round: 50px;
     color: $secondary-color;
 }
 
+
 // Медиа запросы
 
 @mixin mediaXs {
@@ -45,25 +46,32 @@ $round: 50px;
 }
 
 @mixin mediaSm {
-    @media screen and (max-width: 767px) {
+    @media screen and (min-width: 767px) {
         @content;
     }
 }
 
 @mixin mediaMd {
-    @media screen and (max-width: 991px) {
+    @media screen and (min-width: 991px) {
         @content;
     }
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @media screen and (min-width: 1199px) {
         @content;
     }
 }
 
 @mixin mediaXl {
     @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+// Вспомогательные медиа запросы
+@mixin auxiliary {
+    @media screen and (max-width: 992px) {
         @content;
     }
 }

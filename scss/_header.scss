@@ -1,79 +1,177 @@
 .header-content {
-    padding-top: 1.875em;
-    padding-bottom: 1.875em;
+    // padding-top: 1.875em;
+    // padding-bottom: 1.875em;
+    // align-items: center;
+
+    position: relative;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
 
     .logo {
-        width: 300px;
+        // width: 300px;
+        width: 8.75em; //140px
     }
 
 
-    .header-content__row {
-        align-items: center;
-    }
-
-    .header-content__text-info {
+    &__row {
+        // align-items: center;
         text-align: center;
-        color: #666
     }
 
-    .header-content__contact-block {
+    &__logo-with-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+        background-color: $primary-color;
+
+        // .logo {
+        //     // width: 8.75em; //140px
+        // }
+    }
+
+    &__text-info {
+        // text-align: center;
+        // color: #666;
+
+        height: 90px;
+        padding-left: 1.25em; // 20px
+        padding-right: 1.25em;
+        font-size: $font-14px
+    }
+
+    &__contact-block {
         display: flex;
         justify-content: space-between;
+
+        height: 70px;
+        background-color: $primary-color;
+
+        .contact-info {
+            height: 100%;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .working-hours {
+                // color: $secondary-color;
+                font-size: .625rem
+            }
+
+            .callback-btn {
+                // font-size: $font-18px;
+
+                font-size: $font-14px;
+            }
+
+
+
+            .phone-number {
+                // font-size: 1.7rem;
+                // color: #000;
+
+                font-size: $font-18px
+            }
+        }
     }
 
-    .working-hours {
-        color: $secondary-color
-    }
-
-    .callback-btn {
-        font-size: $font-18px;
-    }
-
+    // Кнопка перезвонить
     .contact-btn {
         border-radius: 50%;
         background: #FFF url(../imgs/phone.svg) no-repeat center;
         background-size: 35%;
         box-shadow: 0px 0px 25px 0px rgb(206, 206, 206);
-        width: 70px;
-        height: 70px;
+        // width: 70px;
+        // height: 70px;
 
+        width: 35px;
+        height: 35px;
+        margin-right: 1em;
     }
 
-    .phone-number {
-        font-size: 1.7rem;
-        color: #000
+    // Кнопка меню
+    .menu-btn {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 60px;
+        height: 60px;
+        background-color: $accent-orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 3;
+        cursor: pointer;
+
+        &__line {
+            width: 28px;
+            height: 3px;
+            margin: 3px 0;
+            background-color: #fff;
+            border-radius: 3px
+        }
+    }
+
+    .show-mobile {
+        display: initial;
+    }
+
+    .show-desktop {
+        display: none;
     }
 
 }
 
 // Навигационное меню в шапке
 .header-nav {
-    background: $primary-color;
+    // background: $primary-color;
+
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    z-index: 1;
+
+    &.show {
+        display: initial
+    }
 
     .header-menu {
         display: flex;
         justify-content: space-between;
 
+        flex-direction: column;
+
         &__item {
-            position: relative;
+            // position: relative;
 
             &:hover .header-menu_nested {
                 display: flex;
             }
 
-            &_active {
-                border-bottom: 4px solid $accent-orange
-            }
+            // &_active {
+            //     border-bottom: 4px solid $accent-orange
+            // }
 
             a {
                 display: flex;
                 align-items: center;
                 text-transform: uppercase;
                 font-size: 1.2rem;
-                height: 60px;
+                // height: 60px;
                 color: #000;
+
+                height: initial;
+                padding: 10px 0;
 
                 &:hover {
                     color: $accent-orange;

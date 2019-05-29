@@ -1,224 +1,349 @@
 @include mediaFablet {
-    #our-villages {
-        .articles-grid {
-            grid-template-columns: 1fr;
-        }
-    }
+    // #our-villages {
+    //     .articles-grid {
+    //         grid-template-columns: 1fr;
+    //     }
+    // }
 }
 
 // Мобильные телефоны
 @include mediaSm {
-    #our-villages {
-        .articles-grid {
-            grid-template-columns: 1fr;
+    // .container {
+    //     max-width: 540px;
+    // }
 
-            &__item {
-                width: 100%;
-                max-width: 290px
-            }
-        }
-    }
+    // #our-villages {
+    //     .articles-grid {
+    //         grid-template-columns: 1fr;
+
+    //         &__item {
+    //             width: 100%;
+    //             max-width: 290px
+    //         }
+    //     }
+    // }
 }
 
 // Планшеты
 @include mediaMd {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+
+        // .logo {
+        //     width: 300px;
+        // }
+
+
+        &__row {
+            flex-direction: row;
+            align-items: center;
+            padding-top: 1.875em;
+            padding-bottom: 1.875em;
+        }
+
+        &__logo-with-menu {
+            background-color: transparent;
+            height: initial;
+
+            .logo {
+                width: 300px
+            }
+        }
+
+        &__text-info {
+            text-align: center;
+            color: #666
+        }
+
+        &__contact-block {
+            height: initial;
+            display: flex;
+            justify-content: flex-end;
+            background-color: transparent;
+
+            .contact-info {
+                .working-hours {
+                    color: $secondary-color
+                }
+
+                .callback-btn {
+                    font-size: $font-18px;
+                }
+
+                .phone-number {
+                    font-size: 1.7rem;
+                    color: #000
+                }
+            }
+        }
+
+        // Кнопка перезвонить
+        .contact-btn {
+            width: 70px;
+            height: 70px;
+        }
+
+        .show-mobile {
+            display: none;
+        }
+
+        .show-desktop {
+            display: initial;
+        }
+    }
+
+    // Навигационное меню в шапке
+    .header-nav {
+        display: block;
+        position: initial;
+        background: $primary-color;
+
+        .header-menu {
+            flex-direction: row;
+
+            &__item {
+                position: relative;
+
+                &:hover .header-menu_nested {
+                    display: flex;
+                }
+
+                &_active {
+                    border-bottom: 4px solid $accent-orange
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    height: 60px;
+                    color: #000;
+
+                    &:hover {
+                        color: $accent-orange;
+                    }
+                }
+
+                .header-menu_nested {
+                    position: absolute;
+                    display: none;
+
+                    height: 280px;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    // .header-content {
+    //     // position: relative;
+    //     // width: 100%;
+    //     // padding: 0;
+    //     // display: flex;
+    //     // flex-direction: column;
+    //     // justify-content: center;
+    //     // align-items: center;
+
+    //     // padding-top: 1.875em;
+    //     // padding-bottom: 1.875em;
+    //     // align-items: center;
+
+    //     // &__row {
+    //     //     text-align: center;
+    //     // }
+
+    //     // &__logo-with-menu {
+    //     //     display: flex;
+    //     //     flex-direction: row;
+    //     //     justify-content: space-between;
+    //     //     height: 60px;
+    //     //     background-color: $primary-color;
+
+    //     //     .logo {
+    //     //         width: 8.75em; //140px
+    //     //     }
+    //     // }
+
+    //     // &__text-info {
+    //     //     height: 90px;
+    //     //     padding-left: 1.25em; // 20px
+    //     //     padding-right: 1.25em;
+    //     //     font-size: $font-14px
+    //     // }
+
+    //     // &__contact-block {
+    //     //     height: 70px;
+    //     //     background-color: $primary-color;
+
+    //     //     // .contact-info {
+    //     //     //     // height: 100%;
+    //     //     //     // padding: 10px 0;
+    //     //     //     // display: flex;
+    //     //     //     // flex-direction: column;
+    //     //     //     // justify-content: space-between;
+    //     //     //     // align-items: center;
+
+    //     //     //     // .working-hours {
+    //     //     //     //     // font-size: .625rem
+    //     //     //     // }
+
+    //     //     //     // .phone-number {
+    //     //     //     //     // font-size: $font-18px
+    //     //     //     // }
+
+    //     //     //     // .callback-btn {
+    //     //     //     //     // font-size: $font-14px;
+
+    //     //     //     // }
+    //     //     // }
+
+
+    //     // }
+
+
+
+    //     // Кнопка меню
+    //     .menu-btn {
+    //         // position: absolute;
+    //         // top: 0;
+    //         // left: 0;
+    //         width: 60px;
+    //         height: 60px;
+    //         background-color: $accent-orange;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         align-items: center;
+
+    //         z-index: 3;
+    //         cursor: pointer;
+
+    //         &__line {
+    //             width: 28px;
+    //             height: 3px;
+    //             margin: 3px 0;
+    //             background-color: #fff;
+    //             border-radius: 3px
+    //         }
+    //     }
+
+    //     // Кнопка перезвонить
+    //     // .contact-btn {
+    //     //     width: 35px;
+    //     //     height: 35px;
+    //     //     margin-right: 1em;
+
+    //     //     &_show-mobile {
+    //     //         display: initial;
+    //     //     }
+
+    //     //     &_show-desktop {
+    //     //         display: none;
+    //     //     }
+    //     // }
+    // }
+
+    // .header-nav {
+    //     // display: none;
+    //     // position: absolute;
+    //     // top: 60px;
+    //     // width: 100%;
+    //     // z-index: 1;
+
+    //     // &.show {
+    //     //     display: initial
+    //     // }
+
+    //     // .header-menu {
+    //     //     // flex-direction: column;
+
+    //     //     &__item {
+
+    //     //         &_active {
+    //     //             border: none
+    //     //         }
+
+    //     //         a {
+    //     //             height: initial;
+    //     //             padding: 10px 0
+    //     //         }
+    //     //     }
+
+
+    //     // }
+    // }
+
+    // main {
+    //     .section {
+    //         padding: 0;
+
+    //         &__header {
+    //             padding: 1em 0
+    //         }
+
+    //         &__h1 {
+    //             margin: 0 0 .5em 0;
+    //             font-size: $font-20px;
+
+    //             &::before,
+    //             &::after {
+    //                 width: 15%;
+    //             }
+    //         }
+
+    //         &__h3 {
+    //             font-size: $font-14px;
+    //         }
+    //     }
+    // }
+
+    // #our-villages {
+    //     .articles-grid {
+    //         grid-template-columns: repeat(2, 1fr);
+    //         grid-column-gap: 0;
+
+    //         &__item {
+    //             width: 100%;
+    //             // max-width: 290px
+    //         }
+    //     }
+    // }
+}
+
+@include mediaLg {
+    // #our-villages {
+    //     .articles-grid {
+    //         grid-template-columns: repeat(2, 1fr);
+    //         justify-content: space-around;
+
+    //         &__item {
+    //             width: 100%;
+    //             // max-width: 290px
+    //         }
+    //     }
+    // }
+}
+
+@include mediaXl {
+
+    // #our-villages {
+    //     .articles-grid {
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
+}
+
+// Вспомогательные медиа запросы
+@include auxiliary {
 
     // Для 100% ширины контента
     .container {
         width: 100%;
         max-width: 100%;
         padding: 0;
-    }
-
-    .header-content {
-        position: relative;
-        width: 100%;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &__row {
-            text-align: center;
-        }
-
-        &__logo-with-menu {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 60px;
-            background-color: $primary-color;
-
-            .logo {
-                width: 8.75em; //140px
-            }
-        }
-
-        &__text-info {
-            height: 90px;
-            padding-left: 1.25em; // 20px
-            padding-right: 1.25em;
-            font-size: $font-14px
-        }
-
-        &__contact-block {
-            height: 70px;
-            background-color: $primary-color;
-
-            .contact-info {
-                height: 100%;
-                padding: 10px 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-
-                .working-hours {
-                    font-size: .625rem
-                }
-
-                .phone-number {
-                    font-size: $font-18px
-                }
-
-                .callback-btn {
-                    font-size: $font-14px;
-
-                }
-            }
-
-
-        }
-
-
-
-        // Кнопка меню
-        .menu-btn {
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            width: 60px;
-            height: 60px;
-            background-color: $accent-orange;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            z-index: 3;
-            cursor: pointer;
-
-            &__line {
-                width: 28px;
-                height: 3px;
-                margin: 3px 0;
-                background-color: #fff;
-                border-radius: 3px
-            }
-        }
-
-        // Кнопка перезвонить
-        .contact-btn {
-            width: 35px;
-            height: 35px;
-            margin-right: 1em;
-
-            &_show-mobile {
-                display: initial;
-            }
-
-            &_show-desktop {
-                display: none;
-            }
-        }
-    }
-
-    .header-nav {
-        display: none;
-        position: absolute;
-        top: 60px;
-        width: 100%;
-        z-index: 1;
-
-        &.show {
-            display: initial
-        }
-
-        .header-menu {
-            flex-direction: column;
-
-            &__item {
-
-                &_active {
-                    border: none
-                }
-
-                a {
-                    height: initial;
-                    padding: 10px 0
-                }
-            }
-
-
-        }
-    }
-
-    main {
-        .section {
-            padding: 0;
-
-            &__header {
-                padding: 1em 0
-            }
-
-            &__h1 {
-                margin: 0 0 .5em 0;
-                font-size: $font-20px;
-
-                &::before,
-                &::after {
-                    width: 15%;
-                }
-            }
-
-            &__h3 {
-                font-size: $font-14px;
-            }
-        }
-    }
-
-    #our-villages {
-        .articles-grid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 0;
-
-            &__item {
-                width: 100%;
-                // max-width: 290px
-            }
-        }
-    }
-}
-
-@include mediaLg {
-    #our-villages {
-        .articles-grid {
-            grid-template-columns: repeat(2, 1fr);
-            justify-content: space-around;
-
-            &__item {
-                width: 100%;
-                // max-width: 290px
-            }
-        }
-    }
-}
-
-@include mediaXl {
-    #our-villages {
-        .articles-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
     }
 }
