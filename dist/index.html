@@ -14,31 +14,37 @@
 <body>
     <header>
         <div class="header-content">
+
             <div class="container">
-                <div class="row header-content__row">
-                    <div class="col-4">
-                        <div class="logo">
-                            <img src="./imgs/logo_color.png" class="logo" alt="Дачная земля 33">
+                <div class="header-content header-content__row">
+                    <div class="header-content header-content__logo-with-menu">
+                        <div class="menu-btn">
+                            <div class="menu-btn__line"></div>
+                            <div class="menu-btn__line"></div>
+                            <div class="menu-btn__line"></div>
                         </div>
+                        <img src="./imgs/logo_color.png" class="logo" alt="Дачная земля 33">
+                        <a href="#" class="callback-btn contact-btn contact-btn_show-mobile"></a>
                     </div>
-                    <div class="col-4">
-                        <div class="text-info">Лучшие земельные участки с коммникациями 100 км по Горьковскому шосее
-                            в
-                            Петушинском районе Владимирской облсати</div>
+                    <div class="header-content header-content__text-info">
+                        <!-- <div class="text-info"> -->
+                        Лучшие земельные участки с коммникациями 100 км по Горьковскому шосее
+                        в Петушинском районе Владимирской облсати
+                        <!-- </div> -->
                     </div>
-                    <div class="col-4">
-                        <div class="contact-block">
-                            <a href="#" class="callback-btn contact-btn"></a>
-                            <div class="contact-info">
-                                <div class="working-hours">Ежедневно с 9:00 до 21:00</div>
-                                <div class="phone-number">
-                                    <a href="tel:+7(999) 123 - 45 - 67" class="link">+7(999) 123 - 45 - 67</a>
-                                </div>
-                                <a href="#" class="link link_primary callback-btn callback-text">
-                                    Перезвоните мне
-                                </a>
+                    <div class="header-content header-content__contact-block">
+                        <!-- <div class="contact-block"> -->
+                        <a href="#" class="callback-btn contact-btn contact-btn_show-desktop"></a>
+                        <div class="contact-info">
+                            <div class="working-hours">Ежедневно с 9:00 до 21:00</div>
+                            <div class="phone-number">
+                                <a href="tel:+7(999) 123 - 45 - 67" class="link">+7(999) 123 - 45 - 67</a>
                             </div>
+                            <a href="#" class="link link_primary callback-btn callback-text">
+                                Перезвоните мне
+                            </a>
                         </div>
+                        <!-- </div> -->
                     </div>
                 </div>
 
@@ -50,36 +56,36 @@
 
         <nav class="header-nav">
             <div class="container">
-                <ul class="list header-nav-menu">
-                    <li class="nav-menu-item nav-menu-item_active">
+                <ul class="list header-menu">
+                    <li class="header-menu__item header-menu__item_active">
                         <a href="#" class="link">Главаная</a>
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Деревни</a>
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Участки</a>
-                        <ul class="list nested-nav-menu">
-                            <li><a href="#" class="link">Категория 1</a></li>
-                            <li><a href="#" class="link">Категория 2</a></li>
-                            <li><a href="#" class="link">Категория 3</a></li>
-                            <li><a href="#" class="link">Категория 4</a></li>
-                            <li><a href="#" class="link">Категория 5</a></li>
-                            <li><a href="#" class="link">Категория 6</a></li>
-                            <li><a href="#" class="link">Категория 7</a></li>
+                        <ul class="list header-menu_nested">
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 1</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 2</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 3</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 4</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 5</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 6</a></li>
+                            <li class="header-menu_nested__item"><a href="#" class="link">Категория 7</a></li>
                         </ul>
 
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Акции</a>
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Новости</a>
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Услуги</a>
                     </li>
-                    <li class="nav-menu-item">
+                    <li class="header-menu__item">
                         <a href="#" class="link">Контакты</a>
                     </li>
                 </ul>
@@ -97,14 +103,14 @@
                 </header>
                 <!-- Сетка (grid) участок -->
                 <div class="articles-grid">
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -135,14 +141,14 @@
                             </footer>
                         </article>
                     </div>
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -173,14 +179,14 @@
                             </footer>
                         </article>
                     </div>
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -211,14 +217,14 @@
                             </footer>
                         </article>
                     </div>
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -249,14 +255,14 @@
                             </footer>
                         </article>
                     </div>
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -287,14 +293,14 @@
                             </footer>
                         </article>
                     </div>
-                    <div class="grid-item">
+                    <div class="articles-grid__item">
                         <div class="grid-image">
                             <img src="./imgs/dacha.jpg" alt="dacha">
                         </div>
                         <article class="area-info">
                             <header class="area-info--header">
                                 <h2 class="underlined-heading">Дачные участки в дер. Желтухино (поселок "Пешкинское
-                                    предметье")</h2>
+                                    предместье")</h2>
                             </header>
                             <div class="item-desc">Владимирская облсат, Петушинский рн., Пешкинское сельское поселение,
                                 деревня Желтухино.
@@ -425,6 +431,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
