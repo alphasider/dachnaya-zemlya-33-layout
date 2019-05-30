@@ -75,7 +75,7 @@
       background-color: #fff;
       border-radius: 3px; }
   .header-content .show-mobile {
-    display: initial; }
+    display: flex; }
   .header-content .show-desktop {
     display: none; }
 
@@ -157,6 +157,8 @@
     left: 0; }
   .section__h1::after {
     right: 0; }
+  .section__h1_no-lines::before, .section__h1_no-lines::after {
+    display: none; }
 
 .section__h3 {
   font-weight: lighter;
@@ -167,7 +169,7 @@
   justify-content: center;
   align-items: center;
   margin: 2.5em auto;
-  width: 18.75em;
+  width: 290px;
   height: 3.125em;
   color: #fff;
   font-size: 1.125rem;
@@ -243,14 +245,15 @@
   #contact-form .container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; }
+    align-items: center; }
   #contact-form .contact-form {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr) 12.5em;
-    grid-gap: .625em; }
-    #contact-form .contact-form .contact-form__element {
-      max-width: 300px;
+    grid-template-areas: "email" "phone" "name" "button";
+    grid-gap: 2em .625em;
+    justify-content: center; }
+    #contact-form .contact-form__element {
+      width: 290px;
       height: 3.125em;
       font-size: 1.125rem;
       padding-left: 1.875em;
@@ -258,15 +261,23 @@
       background-color: #fff;
       border-radius: 50px;
       border: transparent; }
-    #contact-form .contact-form .contact-form__submit-btn {
-      max-width: 12.5em;
+    #contact-form .contact-form__email {
+      grid-area: email; }
+    #contact-form .contact-form__name {
+      grid-area: name; }
+    #contact-form .contact-form__phone {
+      grid-area: phone; }
+    #contact-form .contact-form__submit-btn {
+      width: 290px;
       font-size: 1.125rem;
       color: #fff;
-      background-color: #fe7f18; }
+      background-color: #fe7f18;
+      grid-area: button; }
   #contact-form .accept-rules {
     max-width: 23em;
-    padding-top: .625em;
-    text-align: right;
+    margin-top: 0.625em;
+    margin-bottom: 1em;
+    text-align: center;
     font-size: .75rem;
     color: #aaa; }
     #contact-form .accept-rules .link__underlined_secondary {
@@ -324,7 +335,32 @@
       display: block;
       text-align: right; }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 576px) {
+  .section__view-all-btn {
+    width: 18.75em; }
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr); }
+    .articles-grid__item {
+      width: 100%;
+      max-width: 290px; } }
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 3.125em;
+    padding-bottom: 3.125em; }
+    .section__h1 {
+      font-size: 2rem; }
+      .section__h1::before, .section__h1::after {
+        width: 35%; }
+    .section__h3 {
+      font-size: 1.25rem; }
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr); }
+    .articles-grid__item {
+      max-width: 360px;
+      width: 22em; } }
+
+@media screen and (min-width: 992px) {
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -360,7 +396,7 @@
     .header-content .show-mobile {
       display: none; }
     .header-content .show-desktop {
-      display: initial; }
+      display: flex; }
   .header-nav {
     display: block;
     position: initial;
@@ -386,9 +422,30 @@
           position: absolute;
           display: none;
           height: 280px;
-          flex-direction: column; } }
+          flex-direction: column; }
+  .articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.6em; }
+    .articles-grid__item {
+      width: 100%;
+      max-width: 290px; }
+  #contact-form .contact-form {
+    grid-template-areas: "email phone name" ". button ."; } }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1200px) {
+  .articles-grid__item {
+    max-width: 360px;
+    width: 22em; }
+  #contact-form .contact-form {
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-template-areas: "email phone name button"; }
+    #contact-form .contact-form__submit-btn {
+      max-width: 11em; }
+  #contact-form .accept-rules {
+    align-self: flex-end;
+    text-align: right; } }
+
+@media screen and (max-width: 991px) {
   .container {
     width: 100%;
     max-width: 100%;

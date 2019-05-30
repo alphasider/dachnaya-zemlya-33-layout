@@ -60,10 +60,8 @@
 
     &__h1 {
         position: relative;
-
         margin: 0 0 .5em 0;
         font-size: $font-20px;
-
 
         &::before,
         &::after {
@@ -83,6 +81,11 @@
         &::after {
             right: 0
         }
+
+        &_no-lines::before,
+        &_no-lines::after {
+            display: none;
+        }
     }
 
     &__h3 {
@@ -97,7 +100,8 @@
         justify-content: center;
         align-items: center;
         margin: 2.5em auto;
-        width: 18.75em;
+        // width: 18.75em;
+        width: 290px;
         height: 3.125em;
         color: #fff;
         font-size: $font-18px;
@@ -244,18 +248,26 @@
     .container {
         display: flex;
         flex-direction: column;
-        align-items: flex-end
+        // align-items: flex-end;
+        align-items: center;
     }
 
     .contact-form {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(3, 1fr) 12.5em;
-        grid-gap: .625em;
+        // grid-template-columns: repeat(3, 1fr) 12.5em;
+        // grid-template-columns: 1fr;
+        grid-template-areas:
+            "email"
+            "phone"
+            "name"
+            "button";
+        grid-gap: 2em .625em;
+        justify-content: center;
 
-        .contact-form__element {
-            // width: 18.75em;
-            max-width: 300px;
+        &__element {
+            width: 290px;
+            // max-width: 290px;
             height: 3.125em;
             font-size: $font-18px;
             padding-left: 1.875em;
@@ -265,19 +277,35 @@
             border: transparent
         }
 
-        .contact-form__submit-btn {
+        &__email {
+            grid-area: email
+        }
 
-            max-width: 12.5em;
+        &__name {
+            grid-area: name
+        }
+
+        &__phone {
+            grid-area: phone
+        }
+
+        &__submit-btn {
+            // max-width: 12.5em;
+            width: 290px;
             font-size: $font-18px;
             color: #fff;
             background-color: $accent-orange;
+            grid-area: button;
         }
     }
 
     .accept-rules {
         max-width: 23em;
-        padding-top: .625em;
-        text-align: right;
+        // padding-top: .625em;
+        margin-top: 0.625em;
+        margin-bottom: 1em;
+        // text-align: right;
+        text-align: center;
         font-size: .75rem;
         color: $secondary-color;
 
