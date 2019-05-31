@@ -115,7 +115,8 @@
 .articles-grid {
   max-width: 100%;
   display: grid;
-  grid-row-gap: 1.6em;
+  // grid-row-gap: 1.6em;
+  grid-gap: 1.6em;
   justify-content: center;
   justify-items: center;
 

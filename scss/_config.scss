@@ -8,70 +8,67 @@ $secondary-color: #aaa;
 
 $shadow: 0px 0px 20px 0px rgb(206, 206, 206);
 
-$font-14px: .875rem;
+$font-14px: 0.875rem;
 $font-18px: 1.125rem;
 $font-20px: 1.25rem;
 
 $round: 50px;
 
-
 :root {
-    font-size: 16px
+  font-size: 16px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::placeholder {
-    color: $secondary-color;
+  color: $secondary-color;
 }
-
 
 // Медиа запросы
 
 @mixin mediaXs {
-    @media screen and (max-width: 400px) {
-        @content;
-    }
+  @media screen and (max-width: 400px) {
+    @content;
+  }
 }
 
 @mixin mediaFablet {
-    @media screen and (max-width: 600px) {
-        @content;
-    }
-
+  @media screen and (max-width: 600px) {
+    @content;
+  }
 }
 
 @mixin mediaSm {
-    @media screen and (min-width: 576px) {
-        @content;
-    }
+  @media screen and (min-width: 576px) {
+    @content;
+  }
 }
 
 @mixin mediaMd {
-    @media screen and (min-width: 768px) {
-        @content;
-    }
+  @media screen and (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 992px) {
-        @content;
-    }
+  @media screen and (min-width: 992px) {
+    @content;
+  }
 }
 
 @mixin mediaXl {
-    @media screen and (min-width: 1200px) {
-        @content;
-    }
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
 }
 
 // Вспомогательные медиа запросы
 @mixin auxiliary {
-    @media screen and (max-width: 991px) {
-        @content;
-    }
+  @media screen and (max-width: 991px) {
+    @content;
+  }
 }

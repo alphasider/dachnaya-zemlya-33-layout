@@ -37,7 +37,7 @@
 
       &::before,
       &::after {
-        width: 35%;
+        width: 25%; // 35%
       }
     }
 
@@ -311,13 +311,12 @@
   }
 }
 
-// Вспомогательные медиа запросы
-// @include auxiliary {
-
-//     // Для 100% ширины контента
-//     .container {
-//         width: 100%;
-//         max-width: 100%;
-//         padding: 0;
-//     }
-// }
+// Вспомогательные медиа запросы max-width: 991px
+@include auxiliary {
+  // Для 100% ширины контента
+  .container_mobile-full-width {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
