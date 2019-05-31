@@ -1,268 +1,323 @@
 @include mediaFablet {
-    // #our-villages {
-    //     .articles-grid {
-    //         grid-template-columns: 1fr;
-    //     }
-    // }
+  // #our-villages {
+  //     .articles-grid {
+  //         grid-template-columns: 1fr;
+  //     }
+  // }
 }
 
 // Мобильные телефоны
 @include mediaSm {
+  .section__view-all-btn {
+    width: 18.75em;
+  }
 
-    .section__view-all-btn {
-        width: 18.75em;
+  // Плиточная сетка (2x4)
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
 
+    &__item {
+      width: 100%;
+      max-width: 290px;
+
+      // max-width: 360px;
+      // width: 22em;
     }
-
-    // Плиточная сетка (2x4)
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        &__item {
-            width: 100%;
-            max-width: 290px;
-
-            // max-width: 360px;
-            // width: 22em;
-        }
-    }
+  }
 }
 
 // Планшеты
 @include mediaMd {
+  .section {
+    padding-top: 3.125em;
+    padding-bottom: 3.125em;
 
-    .section {
-        padding-top: 3.125em;
-        padding-bottom: 3.125em;
+    &__h1 {
+      font-size: 2rem;
 
-        &__h1 {
-            font-size: 2rem;
-
-            &::before,
-            &::after {
-                width: 35%;
-            }
-        }
-
-        &__h3 {
-            font-size: $font-20px;
-        }
+      &::before,
+      &::after {
+        width: 35%;
+      }
     }
 
-    // Плиточная сетка (2x3)
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-        // grid-template-areas:
-        //     "email phone name"
-        //     ". button .";
+    &__h3 {
+      font-size: $font-20px;
+    }
+  }
 
-        &__item {
-            // width: 100%;
-            // max-width: 290px
+  // Плиточная сетка (2x3)
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-areas:
+    //     "email phone name"
+    //     ". button .";
 
-            max-width: 360px;
-            width: 22em;
-        }
+    &__item {
+      // width: 100%;
+      // max-width: 290px
+
+      max-width: 360px;
+      width: 22em;
+    }
+  }
+
+  .footer {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "logo ." "menu contacts";
+
+      .column-contacts {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
     }
 
-    // // Форма обратнтой связи
-    // #contact-form .contact-form {
-    //     // grid-template-columns: repeat(3, 1fr) 12.5em;
-    //     grid-template-areas:
-    //         "email phone name"
-    //         ". button .";
-    // }
+    section.footer__additional-info {
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
+    }
+    .secondary-info-block {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .legal-address {
+      margin-top: 0;
+
+      &__ognr {
+        display: inline;
+
+        &::before {
+          content: "/";
+        }
+      }
+
+      &__link {
+        text-align: right;
+      }
+    }
+  }
 }
 
 @include mediaLg {
+  // Лого | инфо | контакты в шапке
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    // Лого | инфо | контакты в шапке
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-
-        // .logo {
-        //     width: 300px;
-        // }
-
-
-        &__row {
-            flex-direction: row;
-            align-items: center;
-            padding-top: 1.875em;
-            padding-bottom: 1.875em;
-        }
-
-        &__logo-with-menu {
-            background-color: transparent;
-            height: initial;
-
-            .logo {
-                width: 300px
-            }
-        }
-
-        &__text-info {
-            text-align: center;
-            color: #666
-        }
-
-        &__contact-block {
-            height: initial;
-            display: flex;
-            justify-content: flex-end;
-            background-color: transparent;
-
-            .contact-info {
-                .working-hours {
-                    color: $secondary-color
-                }
-
-                .callback-btn {
-                    font-size: $font-18px;
-                }
-
-                .phone-number {
-                    font-size: 1.7rem;
-                    color: #000
-                }
-            }
-        }
-
-        // Кнопка перезвонить
-        .contact-btn {
-            width: 70px;
-            height: 70px;
-        }
-
-        .show-mobile {
-            display: none;
-        }
-
-        .show-desktop {
-            display: flex;
-        }
-    }
-
-    // Навигационное меню в шапке
-    .header-nav {
-        display: block;
-        position: initial;
-        background: $primary-color;
-
-        .header-menu {
-            flex-direction: row;
-
-            &__item {
-                position: relative;
-
-                &:hover .header-menu_nested {
-                    display: flex;
-                }
-
-                &_active {
-                    border-bottom: 4px solid $accent-orange
-                }
-
-                a {
-                    display: flex;
-                    align-items: center;
-                    text-transform: uppercase;
-                    font-size: 1.2rem;
-                    height: 60px;
-                    color: #000;
-
-                    &:hover {
-                        color: $accent-orange;
-                    }
-                }
-
-                .header-menu_nested {
-                    position: absolute;
-                    display: none;
-
-                    height: 280px;
-                    flex-direction: column;
-                }
-            }
-        }
-    }
-
-    // Плиточная сетка (3x2)
-    .articles-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 1.6em;
-
-        &__item {
-            width: 100%;
-            max-width: 290px;
-
-            // max-width: 360px;
-            // width: 22em;
-        }
-    }
-
-    // Форма обратнтой связи
-    // #contact-form .contact-form {
-    //     grid-template-columns: repeat(3, 1fr) 12.5em;
-    //     grid-template-areas:
-    //         "email phone name button";
+    // .logo {
+    //     width: 300px;
     // }
 
-    // Форма обратнтой связи
-    #contact-form {
-        .contact-form {
-            // grid-template-columns: repeat(3, 1fr) 12.5em;
-            grid-template-areas:
-                "email phone name"
-                ". button .";
+    &__row {
+      flex-direction: row;
+      align-items: center;
+      padding-top: 1.875em;
+      padding-bottom: 1.875em;
+    }
 
+    &__logo-with-menu {
+      background-color: transparent;
+      height: initial;
 
+      .logo {
+        width: 300px;
+      }
+    }
+
+    &__text-info {
+      text-align: center;
+      color: #666;
+    }
+
+    &__contact-block {
+      height: initial;
+      display: flex;
+      justify-content: flex-end;
+      background-color: transparent;
+
+      .contact-info {
+        .working-hours {
+          color: $secondary-color;
         }
 
+        .callback-btn {
+          font-size: $font-18px;
+        }
 
+        .phone-number {
+          font-size: 1.7rem;
+          color: #000;
+        }
+      }
     }
+
+    // Кнопка перезвонить
+    .contact-btn {
+      width: 70px;
+      height: 70px;
+    }
+
+    .show-mobile {
+      display: none;
+    }
+
+    .show-desktop {
+      display: flex;
+    }
+  }
+
+  // Навигационное меню в шапке
+  .header-nav {
+    display: block;
+    position: initial;
+    background: $primary-color;
+
+    .header-menu {
+      flex-direction: row;
+
+      &__item {
+        position: relative;
+
+        &:hover .header-menu_nested {
+          display: flex;
+        }
+
+        &_active {
+          border-bottom: 4px solid $accent-orange;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          height: 60px;
+          color: #000;
+
+          &:hover {
+            color: $accent-orange;
+          }
+        }
+
+        .header-menu_nested {
+          position: absolute;
+          display: none;
+
+          height: 280px;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  // Плиточная сетка (3x2)
+  .articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.6em;
+
+    &__item {
+      width: 100%;
+      max-width: 290px;
+
+      // max-width: 360px;
+      // width: 22em;
+    }
+  }
+
+  // Форма обратнтой связи
+  #contact-form {
+    .contact-form {
+      // grid-template-columns: repeat(3, 1fr) 12.5em;
+      grid-template-areas:
+        "email phone name"
+        ". button .";
+    }
+  }
+
+  //   Футер
+  .footer {
+    &__h1 {
+      margin-bottom: 1.5625em;
+    }
+    &__grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas: "logo menu contacts";
+
+      .column-logo .logo-dark {
+        width: 21em;
+      }
+
+      .column-contacts {
+        padding-bottom: 0;
+        border-bottom: none;
+
+        .contacts-list {
+          &__item {
+            margin: 0;
+            padding: 0 0 0 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-size: 1em;
+
+            &:not(:first-child):not(:last-child) {
+              margin: 0;
+            }
+          }
+          &__address {
+            background-position-y: 3px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include mediaXl {
+  .articles-grid__item {
+    // width: 100%;
+    // max-width: 290px;
 
-    .articles-grid__item {
-        // width: 100%;
-        // max-width: 290px;
+    max-width: 360px;
+    width: 22em;
+  }
 
-        max-width: 360px;
-        width: 22em;
+  // Форма обратнтой связи
+  #contact-form {
+    .contact-form {
+      grid-template-columns: repeat(3, 1fr) auto;
+      grid-template-areas: "email phone name button";
+
+      &__submit-btn {
+        max-width: 11em;
+      }
     }
 
-    // Форма обратнтой связи
-    #contact-form {
-        .contact-form {
-            grid-template-columns: repeat(3, 1fr) auto;
-            grid-template-areas:
-                "email phone name button";
-
-            &__submit-btn {
-                max-width: 11em;
-            }
-
-        }
-
-        .accept-rules {
-            align-self: flex-end;
-            text-align: right;
-        }
+    .accept-rules {
+      align-self: flex-end;
+      text-align: right;
     }
+  }
+
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+
+    .column-logo .logo-dark {
+      width: 21em;
+    }
+  }
 }
 
 // Вспомогательные медиа запросы
-@include auxiliary {
+// @include auxiliary {
 
-    // Для 100% ширины контента
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-}
+//     // Для 100% ширины контента
+//     .container {
+//         width: 100%;
+//         max-width: 100%;
+//         padding: 0;
+//     }
+// }

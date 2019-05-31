@@ -1,86 +1,140 @@
 // Футер
-.footer__main-section {
+.footer {
+  // Основная (вверхняя) часть
+  &__main-section {
     background-color: #3d4144;
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
 
-    .footer__grid {
-        display: grid;
-        grid-template-columns: 4fr 2fr 2fr;
+  // Заголовокки в меню и контактах в подвале
+  &__h1 {
+    position: relative;
+    // margin-bottom: 1.5625em;
+    margin-bottom: 1em;
+    font-size: 1.5625rem;
+    color: #fff;
+  }
 
-        .logo-dark {
-            width: 21em
-        }
+  // Сетка меню и контактов
+  // в основной части (footer__main-section) футера
+  &__grid {
+    display: grid;
+    // grid-template-columns: 4fr 2fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "contacts" "menu";
 
-        .footer__h1 {
-            position: relative;
-            margin-bottom: 1.5625em;
-            font-size: 1.5625rem;
-            color: #fff;
-        }
-
-        .footer-nav__menu-item {
-            padding-top: .3em
-        }
-
-        .footer-nav__menu-item a,
-        .contacts-list__item,
-        .contacts-list__item a {
-            color: $primary-color;
-            // text-decoration: none
-        }
-
-        .column-contacts {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contacts-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-grow: 1
-        }
-
-        .contacts-list__item {
-            padding-left: 2.8em;
-            background-position: top left;
-            background-repeat: no-repeat;
-            background-size: 1em;
-
-        }
-
-        .contacts-list__address {
-            background-image: url(../imgs/map-ballon.svg);
-        }
-
-        .contacts-list__tel {
-            background-image: url(../imgs/phone.svg);
-        }
-
-        .contacts-list__email {
-            background-image: url(../imgs/envelope.svg);
-        }
+    .footer-menu__item a,
+    .contacts-list__item,
+    .contacts-list__item a {
+      color: $primary-color;
+      // text-decoration: none
     }
 
+    // Лого
+    .column-logo {
+      grid-area: logo;
 
-}
+      .logo-dark {
+        //   width: 21em;
+        width: 200px;
+      }
+    }
 
-.footer__additional-info {
+    // Меню
+    .column-menu {
+      grid-area: menu;
+
+      .footer-menu__item {
+        //   padding-top: 0.3em;
+        // padding-bottom: 0.5em;
+        line-height: 1.4;
+      }
+    }
+
+    // Контакты
+    .column-contacts {
+      display: flex;
+      flex-direction: column;
+      grid-area: contacts;
+      padding-bottom: 1em;
+      border-bottom: 2px solid #282c2f;
+
+      .contacts-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        &__item {
+          // padding-left: 2.8em;
+          padding: 0.5em 0 0.5em 2.3em;
+          background-position: center left; //top left
+          background-repeat: no-repeat;
+          background-size: 1.5em; // 1
+
+          &:not(:first-child):not(:last-child) {
+            margin: 0.75em 0;
+          }
+        }
+
+        &__address {
+          background-image: url(../imgs/map-ballon.svg);
+          max-width: 290px;
+        }
+
+        &__tel {
+          background-image: url(../imgs/phone.svg);
+        }
+
+        &__email {
+          background-image: url(../imgs/envelope.svg);
+        }
+      }
+    }
+  }
+
+  // Дополнительная (нижняя) часть
+  &__additional-info {
     padding-top: 1.25em;
     padding-bottom: 1.25em;
     color: $secondary-color;
     font-size: $font-14px;
     background-color: #282c2f;
+  }
 
+  .secondary-info-block {
+    display: flex;
+    flex-direction: column;
+    //   justify-content: space-between;
+    // justify-content: center;
+    text-align: center;
+  }
 
-    .container {
-        display: flex;
-        // flex-direction: column;
-        justify-content: space-between;
+  .legal-address {
+    margin-top: 1em;
 
-        .legal-address .link {
-            display: block;
-            text-align: right;
-        }
+    // ИНН / ОГНР
+    &__inn,
+    &__ognr {
+      position: relative;
+      padding-left: 7px;
+
+      // Косая черта перед ИНН и ОГНР
+      &::before {
+        position: absolute;
+        left: 0;
+      }
     }
 
+    &__inn::before {
+      content: "/";
+    }
+
+    &__ognr,
+    &__link {
+      display: block;
+      // text-align: right;
+    }
+  }
 }
