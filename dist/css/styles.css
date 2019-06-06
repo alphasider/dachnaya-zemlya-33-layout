@@ -140,6 +140,26 @@
   list-style: none;
   padding-left: 0; }
 
+.bread-crumbs__list {
+  display: flex; }
+
+.bread-crumbs__item {
+  position: relative;
+  color: #aaa;
+  font-size: 0.875rem; }
+  .bread-crumbs__item:not(:first-child) {
+    padding-left: 15px; }
+    .bread-crumbs__item:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      width: 5px;
+      height: 5px;
+      border-right: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      transform: rotate(-45deg) translateY(-50%); }
+
 .section__header {
   text-align: center;
   padding: 1em 0; }
@@ -177,12 +197,53 @@
   background-color: #fe7f18;
   border-radius: 50px; }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  margin: auto; }
+  .pagination__list {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1; }
+  .pagination__list-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center; }
+  .pagination__link {
+    width: 80%;
+    font-size: 0.875rem;
+    color: #666; }
+    .pagination__link_active {
+      color: #fe7f18; }
+  .pagination__btn-prev, .pagination__btn-next {
+    width: 45px;
+    height: 45px;
+    font-size: 0.875rem;
+    color: #aaa;
+    background-color: #fff;
+    border: transparent;
+    border-radius: 50%;
+    cursor: pointer; }
+  .pagination__btn-txt {
+    display: none; }
+
+.articles-grid-wrapper {
+  position: relative;
+  background-color: #f3f4f6;
+  margin-top: 2em;
+  padding-top: 1.5em; }
+
 .articles-grid {
   max-width: 100%;
   display: grid;
   grid-gap: 1.6em;
   justify-content: center;
   justify-items: center;
+  position: relative;
   grid-template-columns: 1fr; }
   .articles-grid__item {
     border: 0.16em solid #f3f4f6;
@@ -190,6 +251,8 @@
     max-width: 290px; }
     .articles-grid__item:hover {
       box-shadow: 0px 0px 20px 0px #cecece; }
+    .articles-grid__item_news {
+      background-color: #fff; }
     .articles-grid__item .grid-image {
       height: 170px;
       overflow: hidden; }
@@ -240,6 +303,34 @@
         display: flex;
         justify-content: space-between;
         align-items: center; }
+    .articles-grid__item article .area-info__date {
+      font-size: 0.875rem;
+      color: #b1b1b1; }
+    .articles-grid__item article .area-info__news-link {
+      margin-top: 1.5em;
+      margin-bottom: 1em; }
+
+.articles-tabs {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+  .articles-tabs_desktop {
+    display: none; }
+  .articles-tabs__item {
+    font-size: 0.875rem;
+    color: #aaa;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .articles-tabs__item_active {
+      color: #37550f;
+      background-color: #f3f4f6; }
 
 #contact-form {
   background-color: #f3f4f6; }
@@ -284,6 +375,13 @@
     #contact-form .accept-rules .link__underlined_secondary {
       color: #aaa;
       text-decoration: underline solid #aaa; }
+
+#bread-crumbs {
+  padding-top: 2em;
+  padding-bottom: 0; }
+
+#news-list {
+  padding-top: 0; }
 
 .footer__main-section {
   background-color: #3d4144;
@@ -471,12 +569,29 @@
           display: none;
           height: 280px;
           flex-direction: column; }
+  .articles-tabs__item {
+    border-radius: 10px 10px 0 0; }
+    .articles-tabs__item:not(.articles-tabs__item_active):hover {
+      color: #fff;
+      background-color: #37550f;
+      cursor: pointer; }
   .articles-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1.6em; }
     .articles-grid__item {
       width: 100%;
       max-width: 290px; }
+  .pagination {
+    max-width: 46em;
+    padding-top: 3em;
+    padding-bottom: 3em; }
+    .pagination__list {
+      padding: 0 2em; }
+    .pagination__btn-prev, .pagination__btn-next {
+      width: 12em;
+      border-radius: 2em; }
+    .pagination__btn-txt {
+      display: inline; }
   #contact-form .contact-form {
     grid-template-areas: "email phone name" ". button ."; }
   .footer__h1 {

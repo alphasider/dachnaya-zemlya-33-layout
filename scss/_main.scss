@@ -46,6 +46,37 @@
   padding-left: 0;
 }
 
+
+
+.bread-crumbs {
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    color: $secondary-color;
+    font-size: $font-14px;
+
+    &:not(:first-child) {
+      padding-left: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 6px;
+        width: 5px;
+        height: 5px;
+        border-right: 1px solid $secondary-color;
+        border-bottom: 1px solid $secondary-color;
+        transform: rotate(-45deg) translateY(-50%);
+      }
+    }
+  }
+}
+
 .section {
   // padding-top: 3.125em;
   // padding-bottom: 3.125em;
@@ -110,8 +141,68 @@
   }
 }
 
-// Секция "Наши Деревни"
+// Пагинация
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  margin: auto;
 
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    // padding-left: 1em;
+    // padding-right: 1em;
+  }
+
+  &__list-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__link {
+    width: 80%;
+
+    font-size: $font-14px;
+    color: #666;
+
+    &_active {
+      color: $accent-orange;
+    }
+  }
+
+  &__btn-prev,
+  &__btn-next {
+    width: 45px;
+    height: 45px;
+    font-size: $font-14px;
+    color: $secondary-color;
+    background-color: #fff;
+    border: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__btn-txt {
+    display: none;
+  }
+}
+
+.articles-grid-wrapper {
+  position: relative;
+  background-color: $primary-color;
+  margin-top: 2em; //3.75em;
+  padding-top: 1.5em;
+  //   padding-top: 3.125em;
+  //   padding-bottom: 3.125em;
+}
+
+// [Секция] "Наши Деревни"
 .articles-grid {
   max-width: 100%;
   display: grid;
@@ -119,6 +210,7 @@
   grid-gap: 1.6em;
   justify-content: center;
   justify-items: center;
+  position: relative;
 
   grid-template-columns: 1fr;
 
@@ -126,12 +218,15 @@
     // max-width: 360px;
     // width: 22em;
     border: 0.16em solid $primary-color;
-
     width: 100%;
     max-width: 290px;
 
     &:hover {
       box-shadow: $shadow;
+    }
+
+    &_news {
+      background-color: #fff;
     }
 
     .grid-image {
@@ -142,7 +237,7 @@
     article {
       // padding: 1.2em;
 
-      & > * {
+      &>* {
         padding: 0.6em 1.2em;
       }
 
@@ -234,11 +329,50 @@
           align-items: center;
         }
       }
+
+      .area-info__date {
+        font-size: $font-14px;
+        color: #b1b1b1;
+      }
+
+      .area-info__news-link {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+      }
     }
   }
 }
 
-// Форма обратнтой связи
+.articles-tabs {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &_desktop {
+    display: none;
+  }
+
+  &__item {
+    font-size: $font-14px;
+    color: $secondary-color;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_active {
+      color: $accent-green;
+      background-color: $primary-color;
+    }
+  }
+}
+
+// [Секция] Форма обратнтой связи
 #contact-form {
   background-color: $primary-color;
 
@@ -311,4 +445,15 @@
       text-decoration: underline solid $secondary-color;
     }
   }
+}
+
+// [Секция] Хлебные крошки
+#bread-crumbs {
+  padding-top: 2em;
+  padding-bottom: 0;
+}
+
+// [Секция] Новости
+#news-list {
+  padding-top: 0
 }
