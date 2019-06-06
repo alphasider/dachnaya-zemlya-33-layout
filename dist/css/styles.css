@@ -1,5 +1,6 @@
 :root {
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "proxima-nova_regular"; }
 
 * {
   margin: 0;
@@ -8,6 +9,30 @@
 
 ::placeholder {
   color: #aaa; }
+
+@font-face {
+  font-family: 'proxima-nova_bold';
+  src: url("../fonts/proximanova-bold.woff2") format("woff2"), url("../fonts/proximanova-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima-nova_light';
+  src: url("../fonts/proximanova-light.woff2") format("woff2"), url("../fonts/proximanova-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima-nova_regular';
+  src: url("../fonts/proximanova-regular.woff2") format("woff2"), url("../fonts/proximanova-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima-nova_thin';
+  src: url("../fonts/proximanovat-thin.woff2") format("woff2"), url("../fonts/proximanovat-thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 
 .header-content {
   position: relative;
