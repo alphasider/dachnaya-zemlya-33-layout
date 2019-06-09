@@ -12,15 +12,16 @@ $font-14px: 0.875rem;
 $font-18px: 1.125rem;
 $font-20px: 1.25rem;
 
-$proxima-light: 'proxima-nova_light';
-$proxima-regular: 'proxima-nova_regular';
-$proxima-bold: 'proxima-nova_bold';
+$proxima-light: proxima-nova_light;
+$proxima-regular: proxima-nova_regular;
+$proxima-bold: proxima-nova_bold;
 
 $round: 50px;
 
 :root {
   font-size: 16px;
   font-family: $proxima-regular;
+  line-height: 1.5;
 }
 
 * {
@@ -31,6 +32,12 @@ $round: 50px;
 
 ::placeholder {
   color: $secondary-color;
+}
+
+%flexCenterXY {
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 // Медиа запросы

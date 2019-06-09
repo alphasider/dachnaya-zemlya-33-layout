@@ -46,6 +46,10 @@
     }
   }
 
+  #product {
+    padding: 0;
+  }
+
   // Плиточная сетка (2x3)
   .articles-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -310,6 +314,103 @@
           }
         }
       }
+    }
+  }
+
+  // Слайдер на странице "Карточка товара"
+  .slider {
+
+    width: 100%;
+    max-width: 560px;
+    // height: 450px;
+    height: auto;
+    border: 1px solid red
+  }
+
+  // Краткие характеристики
+  .details {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'slider header'
+      "slider price"
+      "slider table";
+
+    &-list {
+      display: table;
+
+      &__item {
+        display: table-row;
+      }
+
+      &__property {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: .4em;
+        width: calc(100% + 1em);
+      }
+
+      &__line {
+        flex-grow: 1;
+        margin-left: .4em;
+        border-bottom: 1px solid $primary-color;
+      }
+
+      &__value {
+        display: table-cell;
+        padding: .3em 0 .3em 1em;
+        line-height: normal;
+      }
+    }
+
+    .section__header {
+      padding: 0
+    }
+
+    .section__h1 {
+      font-size: 2.18rem;
+      margin: 0;
+      text-align: left;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .product-price {
+    margin: 0;
+
+    &::after,
+    &__label {
+      display: none;
+    }
+  }
+
+  .area-features_extended {
+    flex-direction: row;
+  }
+
+  .communications {
+    display: grid;
+    align-items: center;
+    grid-gap: 1em 2em;
+    grid-template-areas: 'header features''. details';
+
+    &__header {
+      grid-area: header;
+    }
+
+    &__features {
+      grid-area: features;
+      justify-content: space-between;
+    }
+
+    &__details {
+      grid-area: details
     }
   }
 }

@@ -1,6 +1,15 @@
 // Остовные стили
 // Mobile first
 
+.container_flex {
+  @extend %flexCenterXY;
+
+  &_column {
+    @extend %flexCenterXY;
+    flex-direction: column;
+  }
+}
+
 // Ссылки
 .link {
   text-decoration: none;
@@ -44,6 +53,15 @@
 .list {
   list-style: none;
   padding-left: 0;
+}
+
+// Шрифты
+.bold {
+  font-family: $proxima-bold;
+}
+
+.light {
+  font-family: $proxima-light;
 }
 
 
@@ -193,15 +211,6 @@
   }
 }
 
-.articles-grid-wrapper {
-  position: relative;
-  background-color: $primary-color;
-  margin-top: 2em; //3.75em;
-  padding-top: 1.5em;
-  //   padding-top: 3.125em;
-  //   padding-bottom: 3.125em;
-}
-
 // [Секция] "Наши Деревни"
 .articles-grid {
   max-width: 100%;
@@ -228,128 +237,156 @@
     &_news {
       background-color: #fff;
     }
-
-    .grid-image {
-      height: 170px;
-      overflow: hidden;
-    }
-
-    article {
-      // padding: 1.2em;
-
-      &>* {
-        padding: 0.6em 1.2em;
-      }
-
-      // Загаловок "плитки"
-      h2 {
-        font-size: 1.2rem;
-        position: relative;
-        // padding-top: 1em;
-        // padding-bottom: 1em;
-      }
-
-      // Описание в "плитке"
-      // .item-desc {
-      //     padding-top: 1em;
-      //     padding-bottom: 1em;
-      // }
-
-      // Характеристики участка: площадь | расстояние от МКАД
-      .area-info--details {
-        display: flex;
-        justify-content: space-between;
-        font-size: $font-14px;
-        border-top: 0.16em solid $primary-color;
-
-        // Значение характеристик
-        .value {
-          color: $accent-green;
-        }
-      }
-
-      // Иконки (Электричество, газ, вода)
-      .area-info--features--list {
-        // margin-top: 1em;
-        // margin-bottom: 1em;
-
-        display: flex;
-        flex-direction: row;
-
-        .area-info--features--list-item {
-          background-color: $accent-green;
-          width: 2.5em;
-          height: 2.5em;
-          margin-left: 0.71em;
-          margin-right: 0.71em;
-          border-radius: 50%;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 50% !important;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $accent-orange;
-          }
-        }
-
-        .area-info--features--list-item:first-child {
-          margin-left: 0;
-        }
-
-        .area-info--features--list-item:last-child {
-          margin-right: 0;
-        }
-
-        .electrocity {
-          background-image: url(../imgs/power-cord.svg);
-        }
-
-        .gas {
-          background-image: url(../imgs/gas.svg);
-        }
-
-        .water {
-          background-image: url(../imgs/washing-hand.svg);
-        }
-
-        .car {
-          background-image: url(../imgs/car.svg);
-        }
-      }
-
-      // Подвал "плитки"
-      .area-info--footer {
-        background-color: $primary-color;
-
-        .area-info--price {
-          font-size: $font-20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
-
-      .area-info__date {
-        font-size: $font-14px;
-        color: #b1b1b1;
-      }
-
-      .area-info__news-link {
-        margin-top: 1.5em;
-        margin-bottom: 1em;
-      }
-    }
   }
 }
 
+.grid-image {
+  height: 170px;
+  overflow: hidden;
+}
+
+article {
+  // padding: 1.2em;
+
+  &>* {
+    padding: 0.6em 1.2em;
+  }
+
+  // Загаловок "плитки"
+  h2 {
+    font-size: 1.2rem;
+    position: relative;
+  }
+}
+
+// Характеристики участка: площадь | расстояние от МКАД
+.area-info {
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-14px;
+    border-top: 0.16em solid $primary-color;
+
+    // Значение характеристик
+    .value {
+      color: $accent-green;
+    }
+  }
+
+  // Подвал "плитки"
+  &__footer {
+    background-color: $primary-color;
+
+    &__price {
+      font-size: $font-20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__date {
+    font-size: $font-14px;
+    color: #b1b1b1;
+  }
+
+  &__news-link {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+}
+
+
+
+// Стилизация иконок (Электричество, газ, вода, дороги)
+// Используется на страницах:
+// Главная
+// Карточа товара (Отдельные страницы участка)
+.area-features {
+  display: flex;
+  flex-direction: row;
+
+  &_extended {
+    flex-direction: column;
+  }
+
+  // Элементы списка
+  &__item {
+    margin-left: 0.71em;
+    margin-right: 0.71em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // Модификатор списка
+    &_extended {
+      @extend %flexCenterXY;
+
+      justify-content: flex-start;
+      margin: .5em 0;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: $accent-green;
+
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% !important;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-orange;
+    }
+
+    // Модификатор иконок
+    &_extended {
+      width: 3em;
+      height: 3em;
+    }
+  }
+
+  &__txt {
+    margin-left: 1em
+  }
+}
+
+// Электричество
+.electrocity {
+  background-image: url(../imgs/power-cord.svg);
+}
+
+// Газ
+.gas {
+  background-image: url(../imgs/gas.svg);
+}
+
+//  Водапровод
+.water {
+  background-image: url(../imgs/washing-hand.svg);
+}
+
+// Дорога
+.roads {
+  background-image: url(../imgs/car.svg);
+}
+
+
 .articles-tabs {
+  @extend %flexCenterXY;
+
   position: absolute;
   top: -40px;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 
   &_desktop {
@@ -357,13 +394,15 @@
   }
 
   &__item {
+    @extend %flexCenterXY;
+
     font-size: $font-14px;
     color: $secondary-color;
     width: 200px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     &_active {
       color: $accent-green;
@@ -375,13 +414,6 @@
 // [Секция] Форма обратнтой связи
 #contact-form {
   background-color: $primary-color;
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    // align-items: flex-end;
-    align-items: center;
-  }
 
   .contact-form {
     display: grid;
@@ -456,4 +488,178 @@
 // [Секция] Новости
 #news-list {
   padding-top: 0
+}
+
+.articles-grid-wrapper {
+  position: relative;
+  background-color: $primary-color;
+  margin-top: 2em; //3.75em;
+  padding-top: 1.5em;
+  //   padding-top: 3.125em;
+  //   padding-bottom: 3.125em;
+}
+
+// Карточка товара
+#product {
+  .section {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  // Сброс не нужных отступов
+  &>* {
+    padding: initial;
+  }
+}
+
+.main-info {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.details {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "slider"
+    "price"
+    "table";
+
+  &-list {
+    grid-area: table;
+
+    &__item {
+      display: table;
+
+      &_communication {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+
+    &__property {
+      color: $secondary-color;
+      font-size: $font-14px;
+    }
+  }
+}
+
+// Слайдер на странице "Карточка товара"
+.slider {
+  width: 100%;
+  max-width: 290px;
+  height: 250px;
+  border: 1px solid red;
+  grid-area: slider;
+}
+
+.section__header {
+  grid-area: header;
+}
+
+.product-price {
+  position: relative;
+  margin: 1em 0 1.5em;
+  font-size: $font-20px;
+  color: $accent-orange;
+  grid-area: price;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -.7em;
+    left: -15px;
+    width: calc(100% + 30px);
+    border-bottom: 2px solid $primary-color;
+  }
+
+  &__label {
+    font-size: $font-14px;
+    color: $secondary-color;
+  }
+}
+
+
+.share-ribbon {
+  @extend %flexCenterXY;
+  background-color: $accent-green;
+  height: 50px;
+  color: #fff;
+
+  &__txt,
+  &__soc-btns {
+    width: 45%;
+  }
+
+  &__txt {
+    text-align: right;
+    line-height: normal;
+    font-family: $proxima-light;
+  }
+
+  &__soc-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fab {
+      height: 30px;
+      width: 30px;
+      margin: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $accent-green;
+      font-size: 1rem;
+      background-color: #fff;
+      border-radius: $round
+    }
+  }
+}
+
+.contrast-bg {
+  background-color: $primary-color;
+}
+
+.desc {
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  &__list,
+  &__nested-list {
+
+    &-item {
+      padding-left: 1.2em;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        color: #f9ac6d;
+      }
+    }
+  }
+
+  &__list-item {
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+    &::before {
+      content: "○";
+    }
+  }
+
+  &__nested-list-item {
+    padding-top: .2em;
+    padding-bottom: .2em;
+
+    &::before {
+      content: "•";
+    }
+  }
+}
+
+.communications {
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
