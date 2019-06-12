@@ -32,6 +32,28 @@
   }
 }
 
+.btn {
+  @extend %flexCenterXY;
+
+  height: 3em;
+  width: 100%;
+  margin: auto;
+  background-color: $accent-orange;
+  color: #fff;
+
+  &_rounded {
+    border-radius: $round;
+  }
+
+  &_gray {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: $accent-orange;
+    }
+  }
+}
+
 .underlined-heading {
   &::after {
     content: "";
@@ -145,19 +167,21 @@
   }
 
   &__view-all-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 2.5em auto;
     // width: 18.75em;
     width: 290px;
     height: 3.125em;
-    color: #fff;
     font-size: $font-18px;
-    background-color: $accent-orange;
-    border-radius: $round;
   }
 }
+
+// Вспомогательный блок - выступает в качестве контейнера для различных блоков.
+// Объеденяет более мелких или других блоков, для гибкого контроля
+// .auxiliary-block {
+//   @extend %flexCenterXY;
+// }
+
+
 
 // Пагинация
 .pagination {
@@ -206,6 +230,10 @@
     cursor: pointer;
   }
 
+  &__btn-outline {
+    border: 2px solid $primary-color;
+  }
+
   &__btn-txt {
     display: none;
   }
@@ -243,6 +271,9 @@
 .grid-image {
   height: 170px;
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
 }
 
 article {
@@ -276,12 +307,16 @@ article {
   // Подвал "плитки"
   &__footer {
     background-color: $primary-color;
+  }
 
-    &__price {
-      font-size: $font-20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  &__price {
+    font-size: $font-20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_orange {
+      color: $accent-orange;
     }
   }
 
@@ -294,8 +329,20 @@ article {
     margin-top: 1.5em;
     margin-bottom: 1em;
   }
+
+  &__price-and-square {
+    @extend %flexCenterXY;
+
+    justify-content: space-between;
+    margin-bottom: .5em;
+    font-size: $font-20px;
+    color: $secondary-color;
+  }
 }
 
+.h2-mobile-inline {
+  display: inline;
+}
 
 
 // Стилизация иконок (Электричество, газ, вода, дороги)
@@ -492,7 +539,7 @@ article {
 
 .articles-grid-wrapper {
   position: relative;
-  background-color: $primary-color;
+  // background-color: $primary-color;
   margin-top: 2em; //3.75em;
   padding-top: 1.5em;
   //   padding-top: 3.125em;
@@ -662,4 +709,57 @@ article {
 .communications {
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+// Стикеры на странице "Участки"
+.stickers {
+  margin-bottom: 1em;
+
+  &__list {
+    // @extend %flexCenterXY;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__item {
+    // @extend %flexCenterXY;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border: 2px solid $primary-color;
+    border-right: transparent;
+
+    &:not(:first-child) {
+      border-top: transparent;
+      // border-bottom: transparent;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    margin-right: 1em;
+
+    &_dynamic {
+      width: auto;
+      font-family: $proxima-bold;
+      font-size: 1.56rem;
+      text-align: center;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: calc(100% + .5em);
+        border-bottom: 3px solid $accent-orange;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__txt {
+    font-size: $font-14px;
+  }
 }

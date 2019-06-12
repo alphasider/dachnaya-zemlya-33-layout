@@ -413,6 +413,53 @@
       grid-area: details
     }
   }
+
+  // Стикеры на странице "Участки" (над сеткой товаров)
+  .stickers {
+    &__list {
+      flex-direction: row;
+    }
+
+    &__item {
+      flex-direction: column;
+      flex-grow: 1;
+      width: calc(100% / 4);
+      border-top: transparent;
+
+      &:last-child {
+        border-right: 2px solid $primary-color;
+      }
+
+      &_dynamic {
+        justify-content: space-between;
+      }
+    }
+
+    &__icon {
+      width: 4.375em; // 70px
+      margin: 0;
+
+      &_dynamic {
+        width: auto;
+        font-size: 2.5rem;
+
+        &::after {
+          border-bottom: 4px solid $accent-orange;
+        }
+      }
+    }
+
+    &__txt {
+      margin-top: 1em;
+      padding: 0 1em;
+      text-align: center;
+      line-height: normal;
+    }
+  }
+
+  .h2-mobile-inline {
+    display: block;
+  }
 }
 
 @include mediaXl {

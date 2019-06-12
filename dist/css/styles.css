@@ -12,7 +12,7 @@
 ::placeholder {
   color: #aaa; }
 
-.container_flex, .container_flex_column, .area-features__item_extended, .articles-tabs, .articles-tabs__item, .share-ribbon {
+.container_flex, .container_flex_column, .btn, .area-info__price-and-square, .area-features__item_extended, .articles-tabs, .articles-tabs__item, .share-ribbon {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -158,6 +158,19 @@
   .link_no-undeline {
     text-decoration: none; }
 
+.btn {
+  height: 3em;
+  width: 100%;
+  margin: auto;
+  background-color: #fe7f18;
+  color: #fff; }
+  .btn_rounded {
+    border-radius: 50px; }
+  .btn_gray {
+    background-color: #aaa; }
+    .btn_gray:hover {
+      background-color: #fe7f18; }
+
 .underlined-heading::after {
   content: "";
   position: absolute;
@@ -227,16 +240,10 @@
   font-size: 0.875rem; }
 
 .section__view-all-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 2.5em auto;
   width: 290px;
   height: 3.125em;
-  color: #fff;
-  font-size: 1.125rem;
-  background-color: #fe7f18;
-  border-radius: 50px; }
+  font-size: 1.125rem; }
 
 .pagination {
   display: flex;
@@ -269,6 +276,8 @@
     border: transparent;
     border-radius: 50%;
     cursor: pointer; }
+  .pagination__btn-outline {
+    border: 2px solid #f3f4f6; }
   .pagination__btn-txt {
     display: none; }
 
@@ -291,7 +300,9 @@
 
 .grid-image {
   height: 170px;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex;
+  justify-content: center; }
 
 article > * {
   padding: 0.6em 1.2em; }
@@ -310,11 +321,14 @@ article h2 {
 
 .area-info__footer {
   background-color: #f3f4f6; }
-  .area-info__footer__price {
-    font-size: 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
+
+.area-info__price {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .area-info__price_orange {
+    color: #fe7f18; }
 
 .area-info__date {
   font-size: 0.875rem;
@@ -323,6 +337,15 @@ article h2 {
 .area-info__news-link {
   margin-top: 1.5em;
   margin-bottom: 1em; }
+
+.area-info__price-and-square {
+  justify-content: space-between;
+  margin-bottom: .5em;
+  font-size: 1.25rem;
+  color: #aaa; }
+
+.h2-mobile-inline {
+  display: inline; }
 
 .area-features {
   display: flex;
@@ -434,7 +457,6 @@ article h2 {
 
 .articles-grid-wrapper {
   position: relative;
-  background-color: #f3f4f6;
   margin-top: 2em;
   padding-top: 1.5em; }
 
@@ -543,6 +565,40 @@ article h2 {
 .communications {
   padding-top: 2em;
   padding-bottom: 2em; }
+
+.stickers {
+  margin-bottom: 1em; }
+  .stickers__list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+  .stickers__item {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border: 2px solid #f3f4f6;
+    border-right: transparent; }
+    .stickers__item:not(:first-child) {
+      border-top: transparent; }
+  .stickers__icon {
+    width: 40px;
+    margin-right: 1em; }
+    .stickers__icon_dynamic {
+      width: auto;
+      font-family: proxima-nova_bold;
+      font-size: 1.56rem;
+      text-align: center;
+      position: relative; }
+      .stickers__icon_dynamic::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: calc(100% + .5em);
+        border-bottom: 3px solid #fe7f18;
+        transform: translateX(-50%); }
+  .stickers__txt {
+    font-size: 0.875rem; }
 
 .footer__main-section {
   background-color: #3d4144;
@@ -831,7 +887,33 @@ article h2 {
       grid-area: features;
       justify-content: space-between; }
     .communications__details {
-      grid-area: details; } }
+      grid-area: details; }
+  .stickers__list {
+    flex-direction: row; }
+  .stickers__item {
+    flex-direction: column;
+    flex-grow: 1;
+    width: calc(100% / 4);
+    border-top: transparent; }
+    .stickers__item:last-child {
+      border-right: 2px solid #f3f4f6; }
+    .stickers__item_dynamic {
+      justify-content: space-between; }
+  .stickers__icon {
+    width: 4.375em;
+    margin: 0; }
+    .stickers__icon_dynamic {
+      width: auto;
+      font-size: 2.5rem; }
+      .stickers__icon_dynamic::after {
+        border-bottom: 4px solid #fe7f18; }
+  .stickers__txt {
+    margin-top: 1em;
+    padding: 0 1em;
+    text-align: center;
+    line-height: normal; }
+  .h2-mobile-inline {
+    display: block; } }
 
 @media screen and (min-width: 1200px) {
   .articles-grid__item {
