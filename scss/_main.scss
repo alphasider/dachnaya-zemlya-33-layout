@@ -117,12 +117,14 @@
   }
 }
 
-.section {
+.section,
+.post {
   // padding-top: 3.125em;
   // padding-bottom: 3.125em;
 
   &__header {
     text-align: center;
+    grid-area: header;
     // padding-top: 2em;
     // padding-bottom: 2em;
 
@@ -134,28 +136,23 @@
     margin: 0 0 0.5em 0;
     font-size: $font-20px;
 
-    &::before,
-    &::after {
+    &_line::before,
+    &_line::after {
       content: "";
       position: absolute;
       top: 50%;
-      // width: 35%;
       border-bottom: 0.16rem solid $primary-color;
+      // width: 35%;
 
       width: 15%;
     }
 
-    &::before {
+    &_line::before {
       left: 0;
     }
 
-    &::after {
+    &_line::after {
       right: 0;
-    }
-
-    &_no-lines::before,
-    &_no-lines::after {
-      display: none;
     }
   }
 
@@ -321,8 +318,7 @@ article {
   }
 
   &__date {
-    font-size: $font-14px;
-    color: #b1b1b1;
+    @extend %date;
   }
 
   &__news-link {
@@ -600,10 +596,6 @@ article {
   grid-area: slider;
 }
 
-.section__header {
-  grid-area: header;
-}
-
 .product-price {
   position: relative;
   margin: 1em 0 1.5em;
@@ -761,5 +753,32 @@ article {
 
   &__txt {
     font-size: $font-14px;
+  }
+}
+
+// Страница Новость
+.post {
+  padding: 0;
+  
+  &__date {
+    @extend %date;
+
+    text-align-last: left;
+  }
+
+  &__image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+// Карта
+.map {
+  line-height: 0;
+
+  &__img {
+    width: 100%;
   }
 }

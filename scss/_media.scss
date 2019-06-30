@@ -28,15 +28,17 @@
 
 // Планшеты
 @include mediaMd {
-  .section {
+
+  .section,
+  .post {
     padding-top: 3.125em;
     padding-bottom: 3.125em;
 
     &__h1 {
       font-size: 2rem;
 
-      &::before,
-      &::after {
+      &_line::before,
+      &_line::after {
         width: 25%; // 35%
       }
     }
@@ -44,6 +46,10 @@
     &__h3 {
       font-size: $font-20px;
     }
+  }
+
+  .post {
+    padding: 0;
   }
 
   #product {
@@ -272,7 +278,7 @@
     .contact-form {
       // grid-template-columns: repeat(3, 1fr) 12.5em;
       grid-template-areas:
-        "email phone name"
+        "name phone email"
         ". button .";
     }
   }
@@ -365,19 +371,26 @@
       }
     }
 
-    .section__header {
-      padding: 0
+    .section,
+    .post {
+      &__header {
+        padding: 0
+      }
+
+      &__h1 {
+        font-size: 2.18rem;
+        margin: 0;
+        text-align: left;
+
+        &_line::before,
+        &_line::after {
+          display: none;
+        }
+      }
     }
 
-    .section__h1 {
-      font-size: 2.18rem;
-      margin: 0;
-      text-align: left;
-
-      &::before,
-      &::after {
-        display: none;
-      }
+    .post {
+      padding: 0;
     }
   }
 
@@ -475,7 +488,7 @@
   #contact-form {
     .contact-form {
       grid-template-columns: repeat(3, 1fr) auto;
-      grid-template-areas: "email phone name button";
+      grid-template-areas: "name phone email button";
 
       &__submit-btn {
         max-width: 11em;

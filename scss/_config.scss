@@ -40,6 +40,11 @@ $round: 50px;
   align-items: center
 }
 
+%date {
+  font-size: $font-14px;
+  color: #b1b1b1;
+}
+
 // Медиа запросы
 
 @mixin mediaXs {

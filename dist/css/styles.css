@@ -17,6 +17,10 @@
   justify-content: center;
   align-items: center; }
 
+.area-info__date, .post__date {
+  font-size: 0.875rem;
+  color: #b1b1b1; }
+
 @font-face {
   font-family: 'proxima-nova_bold';
   src: url("../fonts/proximanova-bold.woff2") format("woff2"), url("../fonts/proximanova-bold.woff") format("woff");
@@ -214,32 +218,39 @@
       border-bottom: 1px solid #aaa;
       transform: rotate(-45deg) translateY(-50%); }
 
-.section__header {
+.section__header,
+.post__header {
   text-align: center;
+  grid-area: header;
   padding: 1em 0; }
 
-.section__h1 {
+.section__h1,
+.post__h1 {
   position: relative;
   margin: 0 0 0.5em 0;
   font-size: 1.25rem; }
-  .section__h1::before, .section__h1::after {
+  .section__h1_line::before, .section__h1_line::after,
+  .post__h1_line::before,
+  .post__h1_line::after {
     content: "";
     position: absolute;
     top: 50%;
     border-bottom: 0.16rem solid #f3f4f6;
     width: 15%; }
-  .section__h1::before {
+  .section__h1_line::before,
+  .post__h1_line::before {
     left: 0; }
-  .section__h1::after {
+  .section__h1_line::after,
+  .post__h1_line::after {
     right: 0; }
-  .section__h1_no-lines::before, .section__h1_no-lines::after {
-    display: none; }
 
-.section__h3 {
+.section__h3,
+.post__h3 {
   font-weight: lighter;
   font-size: 0.875rem; }
 
-.section__view-all-btn {
+.section__view-all-btn,
+.post__view-all-btn {
   margin: 2.5em auto;
   width: 290px;
   height: 3.125em;
@@ -329,10 +340,6 @@ article h2 {
   align-items: center; }
   .area-info__price_orange {
     color: #fe7f18; }
-
-.area-info__date {
-  font-size: 0.875rem;
-  color: #b1b1b1; }
 
 .area-info__news-link {
   margin-top: 1.5em;
@@ -492,9 +499,6 @@ article h2 {
   border: 1px solid red;
   grid-area: slider; }
 
-.section__header {
-  grid-area: header; }
-
 .product-price {
   position: relative;
   margin: 1em 0 1.5em;
@@ -600,6 +604,21 @@ article h2 {
   .stickers__txt {
     font-size: 0.875rem; }
 
+.post {
+  padding: 0; }
+  .post__date {
+    text-align-last: left; }
+  .post__image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; }
+
+.map {
+  line-height: 0; }
+  .map__img {
+    width: 100%; }
+
 .footer__main-section {
   background-color: #3d4144;
   padding-top: 2em;
@@ -688,15 +707,22 @@ article h2 {
       max-width: 290px; } }
 
 @media screen and (min-width: 768px) {
-  .section {
+  .section,
+  .post {
     padding-top: 3.125em;
     padding-bottom: 3.125em; }
-    .section__h1 {
+    .section__h1,
+    .post__h1 {
       font-size: 2rem; }
-      .section__h1::before, .section__h1::after {
+      .section__h1_line::before, .section__h1_line::after,
+      .post__h1_line::before,
+      .post__h1_line::after {
         width: 25%; }
-    .section__h3 {
+    .section__h3,
+    .post__h3 {
       font-size: 1.25rem; }
+  .post {
+    padding: 0; }
   #product {
     padding: 0; }
   .articles-grid {
@@ -812,7 +838,7 @@ article h2 {
     .pagination__btn-txt {
       display: inline; }
   #contact-form .contact-form {
-    grid-template-areas: "email phone name" ". button ."; }
+    grid-template-areas: "name phone email" ". button ."; }
   .footer__h1 {
     margin-bottom: 1.5625em; }
   .footer__grid {
@@ -862,14 +888,20 @@ article h2 {
         display: table-cell;
         padding: .3em 0 .3em 1em;
         line-height: normal; }
-    .details .section__header {
+    .details .section__header,
+    .details .post__header {
       padding: 0; }
-    .details .section__h1 {
+    .details .section__h1,
+    .details .post__h1 {
       font-size: 2.18rem;
       margin: 0;
       text-align: left; }
-      .details .section__h1::before, .details .section__h1::after {
+      .details .section__h1_line::before, .details .section__h1_line::after,
+      .details .post__h1_line::before,
+      .details .post__h1_line::after {
         display: none; }
+    .details .post {
+      padding: 0; }
   .product-price {
     margin: 0; }
     .product-price::after, .product-price__label {
@@ -921,7 +953,7 @@ article h2 {
     width: 22em; }
   #contact-form .contact-form {
     grid-template-columns: repeat(3, 1fr) auto;
-    grid-template-areas: "email phone name button"; }
+    grid-template-areas: "name phone email button"; }
     #contact-form .contact-form__submit-btn {
       max-width: 11em; }
   #contact-form .accept-rules {
