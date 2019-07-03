@@ -1,12 +1,20 @@
 // Остовные стили
 // Mobile first
 
-.container_flex {
-  @extend %flexCenterXY;
+.container {
+  // &_slider {
+  //   max-width: 100%;
+  //   padding-left: 0;
+  //   padding-right: 0;
+  // }
 
-  &_column {
+  &_flex {
     @extend %flexCenterXY;
-    flex-direction: column;
+
+    &_column {
+      @extend %flexCenterXY;
+      flex-direction: column;
+    }
   }
 }
 
@@ -19,16 +27,19 @@
   &_primary {
     font-size: $font-14px;
     color: $accent-orange;
-    text-decoration: underline solid $accent-orange;
   }
 
   &_secondary {
     color: $secondary-color;
-    text-decoration: underline solid $secondary-color;
   }
 
-  &_no-undeline {
-    text-decoration: none;
+  &_promo {
+    color: $promotion-label-color;
+    text-transform: uppercase;
+  }
+
+  &_underline {
+    text-decoration: underline;
   }
 }
 
@@ -51,6 +62,10 @@
     &:hover {
       background-color: $accent-orange;
     }
+  }
+
+  &_white {
+    background-color: white;
   }
 }
 
@@ -169,6 +184,10 @@
     width: 290px;
     height: 3.125em;
     font-size: $font-18px;
+  }
+
+  &_home-slider {
+    margin-bottom: 3em;
   }
 }
 
@@ -759,11 +778,15 @@ article {
 // Страница Новость
 .post {
   padding: 0;
-  
+
   &__date {
     @extend %date;
 
     text-align-last: left;
+  }
+
+  &__h3 {
+    margin-bottom: 1em;
   }
 
   &__image {
@@ -771,6 +794,48 @@ article {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+  }
+}
+
+// Слайдер на главгой
+.home-slider {
+
+  .slick-list {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__slide {
+    // height: 80px;
+    // background-image: none !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-top-part {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      font-family: $proxima-light;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+  }
+
+  &__title {
+    display: inline;
+    font-size: $font-20px;
+  }
+
+  &__desc {
+    display: inline;
+    font-size: $font-14px;
+    font-family: $proxima-regular;
+  }
+
+  &__detailed-btn {
+    display: block;
   }
 }
 

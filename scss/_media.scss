@@ -1,12 +1,26 @@
+// max-width: 600px
 @include mediaFablet {
+
   // #our-villages {
   //     .articles-grid {
   //         grid-template-columns: 1fr;
   //     }
   // }
+  .container {
+    &_slider {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .home-slider__slide {
+    background-image: none !important;
+  }
 }
 
 // Мобильные телефоны
+// min-width: 576px
 @include mediaSm {
   .section__view-all-btn {
     width: 18.75em;
@@ -24,9 +38,16 @@
       // width: 22em;
     }
   }
+
+  .home-slider__title,
+  .home-slider__desc {
+    display: block;
+    margin-bottom: 0;
+  }
 }
 
 // Планшеты
+// min-width: 768px
 @include mediaMd {
 
   .section,
@@ -72,6 +93,46 @@
     }
   }
 
+  // Слайдер на главной
+  .home-slider {
+    &__slide {
+      padding: 2em;
+      height: 18.75em; // 300px
+      flex-direction: column;
+      justify-content: center;
+      display: flex !important; // !important нужен чтобы перезаписать стили слайдера
+      background-position: right center;
+
+      &-top-part {
+        height: auto;
+        background-image: none !important; // !important нужен чтобы презаписать inline стили
+      }
+    }
+
+    &__title {
+      display: block;
+      color: white;
+      font-size: $font-30px;
+    }
+
+    &__desc {
+      display: block;
+      color: white;
+      font-size: $font-25px;
+    }
+
+    &__detailed-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10.625em; // 170px
+      height: 3.125em;
+      margin-top: 2em;
+      border-radius: $round;
+      background-color: white;
+    }
+  }
+
   .footer {
     &__grid {
       grid-template-columns: 1fr 1fr;
@@ -111,6 +172,8 @@
   }
 }
 
+// Настольные
+// min-width: 992px
 @include mediaLg {
 
   // Лого | инфо | контакты в шапке
@@ -475,6 +538,8 @@
   }
 }
 
+// Большие
+// min-width: 1200px
 @include mediaXl {
   .articles-grid__item {
     // width: 100%;
@@ -498,6 +563,16 @@
     .accept-rules {
       align-self: flex-end;
       text-align: right;
+    }
+  }
+
+  .home-slider {
+    .slick-list {
+      max-width: calc(100% - 60px);
+    }
+
+    &__slide {
+      padding: 0 4em;
     }
   }
 

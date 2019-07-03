@@ -8,19 +8,35 @@ let showMenu = false;
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
-    if (!showMenu) {
-        menuBtn.classList.add('close');
-        headerNav.classList.add('show');
-        headerMenu.classList.add('show');
-        menuItems.forEach(item => item.classList.add('show'));
+  if (!showMenu) {
+    menuBtn.classList.add('close');
+    headerNav.classList.add('show');
+    headerMenu.classList.add('show');
+    menuItems.forEach(item => item.classList.add('show'));
 
-        showMenu = true;
-    } else {
-        menuBtn.classList.remove('close');
-        headerNav.classList.remove('show');
-        headerMenu.classList.remove('show');
-        menuItems.forEach(item => item.classList.remove('show'));
+    showMenu = true;
+  } else {
+    menuBtn.classList.remove('close');
+    headerNav.classList.remove('show');
+    headerMenu.classList.remove('show');
+    menuItems.forEach(item => item.classList.remove('show'));
 
-        showMenu = false;
-    }
+    showMenu = false;
+  }
 }
+
+// Слайдер: Slick.js
+$(document).ready(function () {
+  $('.home-slider').slick({
+    infinite: false,
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 1199,
+      settings: {
+        arrows: false
+      }
+    }]
+  });
+});
