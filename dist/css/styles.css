@@ -21,6 +21,12 @@
   font-size: 0.875rem;
   color: #b1b1b1; }
 
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 @font-face {
   font-family: 'proxima-nova_bold';
   src: url("../fonts/proximanova-bold.woff2") format("woff2"), url("../fonts/proximanova-bold.woff") format("woff");
@@ -469,6 +475,10 @@ article h2 {
 #news-list {
   padding-top: 0; }
 
+.articles-content__item {
+  animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */ }
+
 .articles-grid-wrapper {
   position: relative;
   margin-top: 2em;
@@ -500,11 +510,11 @@ article h2 {
       font-size: 0.875rem; }
 
 .slider {
-  width: 100%;
-  max-width: 290px;
-  height: 250px;
   border: 1px solid red;
   grid-area: slider; }
+
+.product-slider {
+  overflow: hidden; }
 
 .product-price {
   position: relative;

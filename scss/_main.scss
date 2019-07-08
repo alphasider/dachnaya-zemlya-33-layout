@@ -552,6 +552,11 @@ article {
   padding-top: 0
 }
 
+.articles-content__item {
+  animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+}
+
 .articles-grid-wrapper {
   position: relative;
   // background-color: $primary-color;
@@ -608,11 +613,20 @@ article {
 
 // Слайдер на странице "Карточка товара"
 .slider {
-  width: 100%;
-  max-width: 290px;
-  height: 250px;
+  // width: 100%;
+  // max-width: 290px;
+  // height: 250px;
   border: 1px solid red;
   grid-area: slider;
+}
+
+.product-slider {
+  // width: 100%;
+  overflow: hidden;
+
+  // &__img {
+  //   width: 100%;
+  // }
 }
 
 .product-price {

@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="./css/bootstrap-grid.css">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/slick.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+
   <header>
     <div class="header-content">
       <div class="container container_mobile-full-width">
@@ -93,7 +95,9 @@
     </nav>
 
   </header>
+
   <main>
+
     <!-- Хлебные крошки -->
     <section id="bread-crumbs" class="section bread-crumbs">
       <div class="container">
@@ -108,6 +112,33 @@
         </ul>
       </div>
     </section>
+
+    <section class="section section_home-slider">
+      <div class="container container_slider">
+        <div class="home-slider">
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">
+            <div class="home-slider__slide-top-part" style="background-image: url(./imgs/banner.jpg)">
+              <div class="container container_mobile">
+                <a href="#" class="link link_promo link_underline">Акция</a>
+              </div>
+            </div>
+            <div class="home-slider__slide-bottom-part">
+              <div class="container container_mobile">
+                <h1 class="home-slider__title bold">Рассрочка - загородная помощница.</h1>
+                <div class="home-slider__desc">От 0% до 12 месяцев!</div>
+                <a href="#" class="link link_primary home-slider__detailed-btn">Подробнее &#62;</a>
+              </div>
+            </div>
+          </div>
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">2</div>
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">3</div>
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">4</div>
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">5</div>
+          <div class="home-slider__slide" style="background-image: url(./imgs/banner.jpg)">6</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Карточка товара -->
     <article id="product" class="section">
       <section class="main-info">
@@ -116,7 +147,14 @@
             <header class="section__header">
               <h1 class="section__h1 section__h1_line bold">Участок #31</h1>
             </header>
-            <div class="slider">Slider</div>
+            <div class="container container_slider">
+              <div class="product-slider">
+                <div class="product-slider__slide">
+                  <img src="./imgs/zemli.jpg" alt="" class="product-slider__img">
+                </div>
+                <div class="product-slider__slide"><img src="./imgs/zemli.jpg" alt="" class="product-slider__img"></div>
+              </div>
+            </div>
             <h3 class="product-price">
               <span class="product-price__label">Цена: </span> 18 500 руб.
             </h3>
@@ -192,7 +230,6 @@
 
         </div>
       </section>
-
 
       <div class="share-ribbon">
         <div class="container container_flex">
@@ -273,6 +310,7 @@
           </div>
         </div>
       </section>
+
       <section class="section">
         <div class="container">
           <div class="communications">
@@ -326,8 +364,7 @@
                     эксплуатацию. </span>
                 </li>
                 <li class="details-list__item details-list__item_communication">
-                  <span class="details-list__property light">Дороги:<span
-                      class="details-list__line"></span></span>
+                  <span class="details-list__property light">Дороги:<span class="details-list__line"></span></span>
                   <span class="details-list__value">песчано-щебеночное покрытие на территории
                     деревни.</span>
                 </li>
@@ -340,6 +377,7 @@
 
 
     </article>
+
     <!-- Отзывы -->
     <section id="testimonials" class="section">
       <div class="container">
@@ -348,6 +386,7 @@
         </header>
       </div>
     </section>
+
     <!-- Слайдер -->
     <section class="section">
       <div class="containerr">
@@ -356,6 +395,7 @@
         </header>
       </div>
     </section>
+
     <!-- Форма заявки -->
     <section id="contact-form" class="section">
       <div class="container container_flex_column">
@@ -365,7 +405,8 @@
         </header>
         <form action="" class="contact-form">
           <input class="contact-form__element contact-form__name" type="text" name="name" placeholder="Имя*">
-          <input class="contact-form__element contact-form__phone" type="tel" name="phone-number" placeholder="Телефон*">
+          <input class="contact-form__element contact-form__phone" type="tel" name="phone-number"
+            placeholder="Телефон*">
           <input class="contact-form__element contact-form__email" type="email" name="email" placeholder="E-mail*">
           <button class="contact-form__element contact-form__submit-btn" type="submit">Отправить</button>
         </form>
@@ -376,7 +417,9 @@
         </div>
       </div>
     </section>
+
   </main>
+
   <footer id="page-fooer" class="footer">
     <section class="section footer__main-section">
       <div class="container">
@@ -438,15 +481,19 @@
         <div class="secondary-info-block">
           <div class="company-name">2018 г. &copy; "Удачная Земля &trade;"</div>
           <div class="legal-address">
-            ИП Иванов И.И.. <span class="legal-address__inn"> ИНН 77183463208</span> <span
-              class="legal-address__ognr"> ОГНР 332455609001004</span>
+            ИП Иванов И.И.. <span class="legal-address__inn"> ИНН 77183463208</span> <span class="legal-address__ognr">
+              ОГНР 332455609001004</span>
             <a href="#" class="legal-address__link link link_secondary">Политика конфеденциальности</a>
           </div>
         </div>
       </div>
     </section>
   </footer>
+
+  <script src="./js/jquery-v3.4.1.min.js"></script>
+  <script src="./js/slick.min.js"></script>
   <script src="./js/main.js"></script>
+
 </body>
 
 </html>

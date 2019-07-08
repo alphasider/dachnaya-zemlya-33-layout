@@ -48,6 +48,17 @@ $round: 50px;
   color: #b1b1b1;
 }
 
+// Эффект появление с затуханием
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 // Медиа запросы
 
 @mixin mediaXs {
