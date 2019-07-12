@@ -395,16 +395,18 @@ article {
   }
 
   &__icon {
-    display: block;
     width: 2.5em;
     height: 2.5em;
-    background-color: $accent-green;
-
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50% !important;
+    display: block;
     cursor: pointer;
+    overflow: hidden;
+    color: transparent;
+    border-radius: 50%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50% !important;
+    background-color: $accent-green;
 
     &:hover {
       background-color: $accent-orange;

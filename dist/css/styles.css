@@ -383,15 +383,17 @@ article h2 {
       justify-content: flex-start;
       margin: .5em 0; }
   .area-features__icon {
-    display: block;
     width: 2.5em;
     height: 2.5em;
-    background-color: #37550f;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    color: transparent;
     border-radius: 50%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: 50% !important;
-    cursor: pointer; }
+    background-color: #37550f; }
     .area-features__icon:hover {
       background-color: #fe7f18; }
     .area-features__icon_extended {
