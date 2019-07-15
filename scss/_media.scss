@@ -17,6 +17,12 @@
   .home-slider__slide {
     background-image: none !important;
   }
+
+  .product-slider__img {
+    height: 200px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 
 // Мобильные телефоны
@@ -43,6 +49,12 @@
   .home-slider__desc {
     display: block;
     margin-bottom: 0;
+  }
+
+  .product-slider .slick-list {
+    max-width: calc(100% - 60px);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -387,13 +399,32 @@
   }
 
   // Слайдер на странице "Карточка товара"
-  .slider {
+  .product-slider {
 
     width: 100%;
     max-width: 560px;
     // height: 450px;
     height: auto;
-    border: 1px solid red
+  }
+
+  .share-ribbon {
+    max-width: calc(100% - 60px);
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+
+    &_mobile {
+      display: none;
+    }
+
+    &_desktop {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
   }
 
   // Краткие характеристики
@@ -575,6 +606,8 @@
       padding: 0 4em;
     }
   }
+
+
 
   .footer__grid {
     grid-template-columns: 2fr 1fr 1fr;

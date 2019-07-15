@@ -587,16 +587,18 @@ article {
 }
 
 .details {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "slider"
-    "price"
-    "table";
+  // display: grid;
+  // grid-template-areas:
+  //   "header"
+  //   "slider"
+  //   "price"
+  //   "table";
+
+  &-table {
+    grid-area: table;
+  }
 
   &-list {
-    grid-area: table;
-
     &__item {
       display: table;
 
@@ -615,21 +617,34 @@ article {
 
 // Слайдер на странице "Карточка товара"
 .slider {
-  // width: 100%;
-  // max-width: 290px;
-  // height: 250px;
-  border: 1px solid red;
+  position: relative;
   grid-area: slider;
 }
 
 .product-slider {
   // width: 100%;
-  overflow: hidden;
+  // max-width: 290px;
+  // height: 250px;
+  // grid-area: slider;
 
-  // &__img {
-  //   width: 100%;
-  // }
+  &__img {
+    // width: 100%;
+    height: 450px;
+  }
+
+  .slick-dots {
+    bottom: initial;
+  }
 }
+
+// .product-slider {
+//   // width: 100%;
+//   overflow: hidden;
+
+//   // &__img {
+//   //   width: 100%;
+//   // }
+// }
 
 .product-price {
   position: relative;
@@ -657,15 +672,17 @@ article {
 .share-ribbon {
   @extend %flexCenterXY;
   background-color: $accent-green;
+  max-width: 100%;
   height: 50px;
   color: #fff;
 
-  &__txt,
-  &__soc-btns {
-    width: 45%;
-  }
+  // &__txt,
+  // &__soc-btns {
+  //   width: 45%;
+  // }
 
   &__txt {
+    margin-right: 10px;
     text-align: right;
     line-height: normal;
     font-family: $proxima-light;
@@ -688,6 +705,10 @@ article {
       background-color: #fff;
       border-radius: $round
     }
+  }
+
+  &_desktop {
+    display: none;
   }
 }
 
