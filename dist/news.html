@@ -8,6 +8,7 @@
   <title>Дачная земля 33</title>
   <link rel="stylesheet" href="./css/bootstrap-grid.css">
   <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/slick.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -233,12 +234,12 @@
               </div>
               <!-- <a href="#" class="section__view-all-btn">Посмотреть все</a> -->
               <div class="pagination">
-                <button class="pagination__btn-prev">
-                  &#60;&#60;
-                  <!-- << -->
-                  <span class="pagination__btn-txt">Предыдущая</span>
-                </button>
                 <ul class="list pagination__list">
+                  <li class="pagination__list-item pagination__btn-prev">
+                    &#60;&#60;&nbsp;
+                    <!-- << -->
+                    <span class="pagination__btn-txt">Предыдущая</span>
+                  </li>
                   <li class="pagination__list-item">
                     <a href="#" class="link pagination__link pagination__link_active">1</a>
                   </li>
@@ -257,16 +258,14 @@
                   <li class="pagination__list-item">
                     <a href="#" class="link pagination__link">6</a>
                   </li>
+                  <li class="pagination__list-item pagination__btn-next">
+                    <span class="pagination__btn-txt">Следующая</span>
+                    &nbsp;&#62;&#62;
+                    <!-- >> -->
+                  </li>
                 </ul>
-                <button class="pagination__btn-next">
-                  <span class="pagination__btn-txt">Следующая</span>
-                  &#62;&#62;
-                  <!-- >> -->
-                </button>
               </div>
             </li>
-            <li class="articles-content__item posts">Sales</li>
-            <li class="articles-content__item feed">RSS</li>
           </ul>
         </div>
       </div>
@@ -274,11 +273,69 @@
     </section>
 
     <!-- Отзывы -->
-    <section id="testimonials" class="section">
+    <section class="section testimonials">
       <div class="container">
         <header class="section__header">
           <h1 class="section__h1 section__h1_line">Отзывы клиентов</h1>
         </header>
+        <div class="testimonials__slider">
+          <div class="testimonials__slide">
+            <div class="testimonials__header">
+              <img src="./imgs/avatar.png" class="testimonials__avatar">
+              <div class="testimonials__header-group">
+                <div class="testimonials__name bold">Мария Борисовна</div>
+                <div class="testimonials__city light">г. Люберцы, Московская область</div>
+              </div>
+            </div>
+            <div class="testimonials__body">
+              Наша семья приобрела земельный участок в деревне Кукушкино. Мы довольны своим приобретением. Особо хочется
+              выразить свою благодарность Ирине Владимировне за доброжелательное и внимательное ...
+            </div>
+            <a href="#" class="link link_primary link_underline testimonials__read-more">Читать весь отзыв</a>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__header">
+              <img src="./imgs/avatar.png" class="testimonials__avatar">
+              <div class="testimonials__header-group">
+                <div class="testimonials__name bold">Мария Борисовна</div>
+                <div class="testimonials__city light">г. Люберцы, Московская область</div>
+              </div>
+            </div>
+            <div class="testimonials__body">
+              Наша семья приобрела земельный участок в деревне Кукушкино. Мы довольны своим приобретением. Особо хочется
+              выразить свою благодарность Ирине Владимировне за доброжелательное и внимательное ...
+            </div>
+            <a href="#" class="link link_primary link_underline testimonials__read-more">Читать весь отзыв</a>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__header">
+              <img src="./imgs/avatar.png" class="testimonials__avatar">
+              <div class="testimonials__header-group">
+                <div class="testimonials__name bold">Мария Борисовна</div>
+                <div class="testimonials__city light">г. Люберцы, Московская область</div>
+              </div>
+            </div>
+            <div class="testimonials__body">
+              Наша семья приобрела земельный участок в деревне Кукушкино. Мы довольны своим приобретением. Особо хочется
+              выразить свою благодарность Ирине Владимировне за доброжелательное и внимательное ...
+            </div>
+            <a href="#" class="link link_primary link_underline testimonials__read-more">Читать весь отзыв</a>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__header">
+              <img src="./imgs/avatar.png" class="testimonials__avatar">
+              <div class="testimonials__header-group">
+                <div class="testimonials__name bold">Мария Борисовна</div>
+                <div class="testimonials__city light">г. Люберцы, Московская область</div>
+              </div>
+            </div>
+            <div class="testimonials__body">
+              Наша семья приобрела земельный участок в деревне Кукушкино. Мы довольны своим приобретением. Особо хочется
+              выразить свою благодарность Ирине Владимировне за доброжелательное и внимательное ...
+            </div>
+            <a href="#" class="link link_primary link_underline testimonials__read-more">Читать весь отзыв</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -385,6 +442,8 @@
     </section>
   </footer>
 
+  <script src="./js/jquery-v3.4.1.min.js"></script>
+  <script src="./js/slick.min.js"></script>
   <script src="./js/main.js"></script>
 
 </body>

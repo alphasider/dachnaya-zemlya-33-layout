@@ -145,6 +145,15 @@
     }
   }
 
+  // Отзывы
+  .testimonials {
+
+    &__slide {
+      width: 350px;
+      max-width: 350px;
+    }
+  }
+
   .footer {
     &__grid {
       grid-template-columns: 1fr 1fr;
@@ -339,7 +348,8 @@
     &__btn-prev,
     &__btn-next {
       width: 12em;
-      border-radius: 2em
+      max-width: 12em;
+      border-radius: 2em;
     }
 
     &__btn-txt {
@@ -566,6 +576,35 @@
 
   .h2-mobile-inline {
     display: block;
+  }
+
+  // Отзывы
+  .testimonials {
+
+    &__slider {
+      .slick-list {
+        max-width: calc(100% - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      .slick-prev,
+      .slick-next {
+        height: calc(100% - 10px);
+      }
+    }
+
+    &__slide {
+      width: 360px;
+      max-width: 360px;
+      padding: 2em;
+
+      &:hover {
+        box-shadow: $shadow-light;
+      }
+    }
   }
 }
 

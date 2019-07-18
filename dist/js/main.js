@@ -91,4 +91,48 @@ $(document).ready(function () {
       }
     }]
   });
+
+  // Слайдер отзывов
+  $('.testimonials__slider').slick({
+    dots: true,
+    infinite: false,
+    // centerMode: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    responsive: [{
+        breakpoint: 992,
+        settings: {
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '135px',
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          // centerPadding: '100px',
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '50px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
 });
