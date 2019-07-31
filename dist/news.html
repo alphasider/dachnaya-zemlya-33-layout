@@ -111,169 +111,171 @@
     </section>
 
     <!-- Список новостей -->
-    <section id="news-list" class="section">
+    <section id="news-list">
       <div class="container">
         <header class="section__header">
           <h1 class="section__h1 section__h1_line">Новости</h1>
         </header>
       </div>
-      <div class="articles-grid-wrapper contrast-bg">
+      <div class="section articles-grid-wrapper contrast-bg">
         <ul class="list articles-tabs articles-tabs_mobile">
-          <li id="news" class="articles-tabs__item articles-tabs__item_active">Новости</li>
-          <li id="posts" class="articles-tabs__item">Статьи</li>
-          <li id="feed" class="articles-tabs__item">Лента событий</li>
+          <li id="news" class="articles-tabs__item">
+            <a href="#" class="link bold articles-tabs__link articles-tabs__link_active">Новости</a>
+          </li>
+          <li id="posts" class="articles-tabs__item">
+            <a href="#" class="link articles-tabs__link">Статьи</a>
+          </li>
+          <li id="feed" class="articles-tabs__item">
+            <a href="#" class="link articles-tabs__link">Лента событий</a>
+          </li>
         </ul>
         <div class="container">
-          <ul class="list articles-content">
-            <li class="articles-content__item news">
-              <!-- Сетка (grid) участок -->
-              <div class="articles-grid articles-grid_news">
-                <!-- <ul class="list articles-tabs articles-tabs_desktop">
+          <!-- Сетка (grid) участок -->
+          <div class="articles-grid articles-grid_news">
+            <!-- <ul class="list articles-tabs articles-tabs_desktop">
               <li class="articles-tabs__item articles-tabs__item_active">Новости</li>
               <li class="articles-tabs__item">Статьи</li>
               <li class="articles-tabs__item">Лента событий</li>
             </ul> -->
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-                <div class="articles-grid__item articles-grid__item_news">
-                  <div class="grid-image">
-                    <img src="./imgs/dacha.jpg" alt="dacha">
-                  </div>
-                  <article class="area-info">
-                    <div class="item-desc">
-                      <div class="area-info__date">13.12.2019</div>
-                      <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
-                      <div class="area-info__news-link">
-                        <a href="#" class="link link_primary">Читать статью
-                          полнстью</a>
-                      </div>
-
-                    </div>
-                  </article>
-                </div>
-
-
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
               </div>
-              <!-- <a href="#" class="section__view-all-btn">Посмотреть все</a> -->
-              <div class="pagination">
-                <ul class="list pagination__list">
-                  <li class="pagination__list-item pagination__btn-prev">
-                    &#60;&#60;&nbsp;
-                    <!-- << -->
-                    <span class="pagination__btn-txt">Предыдущая</span>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link pagination__link_active">1</a>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link">2</a>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link">3</a>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link">4</a>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link">5</a>
-                  </li>
-                  <li class="pagination__list-item">
-                    <a href="#" class="link pagination__link">6</a>
-                  </li>
-                  <li class="pagination__list-item pagination__btn-next">
-                    <span class="pagination__btn-txt">Следующая</span>
-                    &nbsp;&#62;&#62;
-                    <!-- >> -->
-                  </li>
-                </ul>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
               </div>
-            </li>
-          </ul>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
+              </div>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
+              </div>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
+              </div>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+            <div class="articles-grid__item articles-grid__item_news">
+              <div class="grid-image">
+                <img src="./imgs/dacha.jpg" alt="dacha">
+              </div>
+              <article class="area-info">
+                <div class="item-desc">
+                  <div class="area-info__date">13.12.2019</div>
+                  <h2 class="underlined-heading">В деревне Жары построена центральная дорога!</h2>
+                  <div class="area-info__news-link">
+                    <a href="#" class="link link_primary">Читать статью
+                      полнстью</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+
+
+          </div>
+          <!-- <a href="#" class="section__view-all-btn">Посмотреть все</a> -->
+          <div class="pagination">
+            <ul class="list pagination__list">
+              <li class="pagination__list-item pagination__btn-prev">
+                &#60;&#60;&nbsp;
+                <!-- << -->
+                <span class="pagination__btn-txt">Предыдущая</span>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link pagination__link_active">1</a>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link">2</a>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link">3</a>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link">4</a>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link">5</a>
+              </li>
+              <li class="pagination__list-item">
+                <a href="#" class="link pagination__link">6</a>
+              </li>
+              <li class="pagination__list-item pagination__btn-next">
+                <span class="pagination__btn-txt">Следующая</span>
+                &nbsp;&#62;&#62;
+                <!-- >> -->
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
     </section>
 
     <!-- Отзывы -->
-    <section class="section testimonials">
+    <!-- <section class="section testimonials">
       <div class="container">
         <header class="section__header">
           <h1 class="section__h1 section__h1_line">Отзывы клиентов</h1>
@@ -337,23 +339,22 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Слайдер -->
-    <section class="section">
+    <!-- <section class="section">
       <div class="containerr">
         <header class="section__header">
           <h1 class="section__h1 section__h1_line">Здесь будет слайдер</h1>
         </header>
       </div>
-    </section>
+    </section> -->
 
     <!-- Форма заявки -->
-    <section id="contact-form" class="section">
+    <section class="section contacts">
       <div class="container container_flex_column">
         <header class="section__header">
-          <h1 class="section__h1 section__h1_line">Оставьте заявку</h1>
-
+          <h1 class="section__h1">Оставьте заявку</h1>
         </header>
         <form action="" class="contact-form">
           <input class="contact-form__element contact-form__name" type="text" name="name" placeholder="Имя*">
@@ -364,8 +365,7 @@
         </form>
         <div class="accept-rules">
           Нажимая на кнопку "Отправить" Вы даете согласие на обработку
-          <a href="#" class="link link_secondary">персональных
-            данных</a>
+          <a href="#" class="link link_secondary link_underline">персональных данных</a>
         </div>
       </div>
     </section>

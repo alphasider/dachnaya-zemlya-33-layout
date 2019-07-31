@@ -1,8 +1,9 @@
 // Меню бургер
-const menuBtn = document.querySelector('.menu-btn');
-const headerNav = document.querySelector('.header-nav');
-const headerMenu = document.querySelector('.header-menu');
-const menuItems = document.querySelectorAll('.header-menu__item');
+const menuBtn = document.querySelector('.menu-btn'); // Кнопка меню
+const headerNav = document.querySelector('.header-nav'); // Блок с меню
+const headerMenu = document.querySelector('.header-menu'); // Меню
+const menuItems = document.querySelectorAll('.header-menu__item'); // Пункты меню
+const lightBox = document.querySelector('.light-box'); // Лайтбокс (темный фон)
 
 let showMenu = false;
 
@@ -13,17 +14,24 @@ function toggleMenu() {
     menuBtn.classList.add('close');
     headerNav.classList.add('show');
     headerMenu.classList.add('show');
+    lightBox.classList.add('show');
     menuItems.forEach(item => item.classList.add('show'));
-
+    window.addEventListener('scroll', noScroll);
     showMenu = true;
   } else {
     menuBtn.classList.remove('close');
     headerNav.classList.remove('show');
     headerMenu.classList.remove('show');
+    lightBox.classList.remove('show');
     menuItems.forEach(item => item.classList.remove('show'));
-
+    window.removeEventListener('scroll', noScroll);
     showMenu = false;
   }
+}
+
+// Остановить скролл когда открыт меню
+function noScroll() {
+  window.scroll(0, 0);
 }
 
 
