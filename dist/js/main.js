@@ -34,6 +34,19 @@ function noScroll() {
   window.scroll(0, 0);
 }
 
+// Плавная прокрутка к контактной форме
+const contactForm = document.querySelector('#contact-form');
+
+document.querySelectorAll('.callback-btn').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    contactForm.scrollIntoView({
+      behavior: 'smooth'
+    })
+  })
+});
+
+
 
 const tablinks = document.querySelectorAll('.articles-tabs__item'); // Вкладки
 const tabcontent = document.querySelectorAll('.articles-content__item'); // Содержимое
