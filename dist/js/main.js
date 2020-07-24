@@ -8,25 +8,34 @@ const lightBox = document.querySelector('.light-box'); // Лайтбокс (те
 let showMenu = false;
 
 menuBtn.addEventListener('click', toggleMenu);
+lightBox.addEventListener('click', closeMenu);
 
 function toggleMenu() {
   if (!showMenu) {
-    menuBtn.classList.add('close');
-    headerNav.classList.add('show');
-    headerMenu.classList.add('show');
-    lightBox.classList.add('show');
-    menuItems.forEach(item => item.classList.add('show'));
-    window.addEventListener('scroll', noScroll);
-    showMenu = true;
+    openMenu();
   } else {
-    menuBtn.classList.remove('close');
-    headerNav.classList.remove('show');
-    headerMenu.classList.remove('show');
-    lightBox.classList.remove('show');
-    menuItems.forEach(item => item.classList.remove('show'));
-    window.removeEventListener('scroll', noScroll);
-    showMenu = false;
+    closeMenu();
   }
+}
+
+function openMenu() {
+  menuBtn.classList.add('close');
+  headerNav.classList.add('show');
+  headerMenu.classList.add('show');
+  lightBox.classList.add('show');
+  menuItems.forEach(item => item.classList.add('show'));
+  window.addEventListener('scroll', noScroll);
+  showMenu = true;
+}
+
+function closeMenu() {
+  menuBtn.classList.remove('close');
+  headerNav.classList.remove('show');
+  headerMenu.classList.remove('show');
+  lightBox.classList.remove('show');
+  menuItems.forEach(item => item.classList.remove('show'));
+  window.removeEventListener('scroll', noScroll);
+  showMenu = false;
 }
 
 // Остановить скролл когда открыт меню
@@ -47,11 +56,10 @@ document.querySelectorAll('.callback-btn').forEach(btn => {
 });
 
 
-
+// Табы на странице новости
 const tablinks = document.querySelectorAll('.articles-tabs__item'); // Вкладки
 const tabcontent = document.querySelectorAll('.articles-content__item'); // Содержимое
 
-// Табы на странице новости
 function switchTab(e, id) {
 
   // let evTar = e.target;
@@ -80,9 +88,7 @@ for (let i = 0; i < tablinks.length; i++) {
   tablinks[i].addEventListener('click', switchTab);
 }
 
-
-
-// Слайдер: Slick.js
+// Слайдеры (Slick.js)
 $(document).ready(function () {
 
   // Слайдер на главной странице

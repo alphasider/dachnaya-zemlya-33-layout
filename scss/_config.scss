@@ -104,3 +104,13 @@ $round: 50px;
     @content;
   }
 }
+
+// Исправление багов
+
+.product-slider .slick-slide {
+  height: initial !important;
+}
+
+.home-slider .slick-dots {
+  bottom: initial;
+}

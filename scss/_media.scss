@@ -456,19 +456,26 @@
       "slider price"
       "slider table";
 
+    &-table {
+      margin-top: 2.18em;
+      margin-bottom: 2.18em;
+    }
+
     &-list {
       display: table;
 
       &__item {
         display: table-row;
+        height: 35px;
       }
 
       &__property {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-right: .4em;
         width: calc(100% + 1em);
+        padding-right: .4em;
+        font-size: 1rem
       }
 
       &__line {
@@ -481,6 +488,7 @@
         display: table-cell;
         padding: .3em 0 .3em 1em;
         line-height: normal;
+        font-size: 1rem
       }
     }
 
@@ -509,6 +517,7 @@
 
   .product-price {
     margin: 0;
+    font-size: $font-25px;
 
     &::after,
     &__label {
